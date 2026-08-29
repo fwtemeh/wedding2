@@ -276,6 +276,106 @@ button {
   stroke-linejoin: round;
 }
 
+
+/* ==================================================
+   LIVE LETTER TEXT — متن روی نامه داخل ویدئو
+================================================== */
+.letter-overlay {
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  top: 48%;
+  width: 58%;
+  height: 48%;
+  transform: translate(-50%, -50%) scale(.72);
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  direction: rtl;
+  transition: opacity .35s ease;
+}
+
+.letter-overlay.show {
+  opacity: 1;
+  animation: letterTextIn 7.5s ease-out forwards;
+}
+
+.letter-content {
+  width: 100%;
+  padding: 5% 7%;
+  color: #9a737c;
+  font-family: "Noto Naskh Arabic", "Amiri", serif;
+  text-shadow: 0 1px 2px rgba(255,255,255,.55);
+}
+
+.letter-title {
+  font-family: "Aref Ruqaa", "Amiri", serif;
+  font-size: clamp(20px, 5.2vw, 38px);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #b47783;
+}
+
+.letter-line {
+  width: 48%;
+  height: 1px;
+  margin: 3% auto;
+  background: linear-gradient(90deg, transparent, #c8a58d, transparent);
+}
+
+.letter-body {
+  font-size: clamp(9px, 2.55vw, 17px);
+  line-height: 2.05;
+}
+
+.letter-details {
+  margin-top: 4%;
+  display: flex;
+  justify-content: center;
+  gap: clamp(8px, 2.8vw, 20px);
+  font-size: clamp(9px, 2.5vw, 16px);
+  color: #a78472;
+}
+
+.letter-details span {
+  white-space: nowrap;
+}
+
+@keyframes letterTextIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.60);
+  }
+  18% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(.78);
+  }
+  45% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(.94);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+@media (max-width: 360px) {
+  .letter-overlay {
+    width: 57%;
+    height: 46%;
+  }
+  .letter-content {
+    padding: 4% 5%;
+  }
+  .letter-body {
+    line-height: 1.85;
+  }
+}
+
 /* ==================================================
    GLOW
 ================================================== */
