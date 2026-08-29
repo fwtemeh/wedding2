@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f5f0f2">
+    <meta name="description" content="دعوت‌نامه عروسی نازنین زهرا و محمد مهدی">
+    <title>نازنین زهرا ♥ محمد مهدی</title>
+    <link rel="icon"
+          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A4%8D%3C/text%3E%3C/svg%3E">
+    <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap"
+            rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="stage">
+
+    <!-- VIDEO -->
+    <video id="hero" src="wedding-animation.mp4?v=3" poster="poster.jpg?v=3" muted playsinline preload="auto">
+    </video>
+
+    <!-- MUSIC -->
+    <audio id="music" src="music.mp3?v=3" preload="auto" loop>
+    </audio>
+
+    <div class="shade"></div>
+    <div id="glow" class="glow"></div>
+
+    <!-- START -->
+    <div id="start" class="start">
+        <button type="button">برای گشودن دعوت‌نامه لمس کنید</button>
+    </div>
+
+    <!-- MUSIC BUTTON -->
+    <button id="muteBtn" class="mute-btn" type="button" aria-label="قطع و وصل موسیقی">
+        <svg viewBox="0 0 24 24">
+            <path d="M11 5L6 9H2v6h4l5 4V5z" />
+            <path id="soundWave" d="M15.5 8.5a5 5 0 0 1 0 7" />
+        </svg>
+    </button>
+
+    <!-- BACK TO START BUTTON -->
+    <button id="backBtn" class="back-btn" type="button" aria-label="بازگشت به صفحه اول">
+        <svg viewBox="0 0 24 24">
+            <path d="M20 12a8 8 0 1 1-2.34-5.66" />
+            <path d="M20 4v5h-5" />
+        </svg>
+    </button>
+
+    <!-- INVITATION -->
+    <section id="invite" class="invite">
+        <div class="frame">
+            <div id="slides" class="slides">
+
+                <!-- ===== SLIDE 1 (GUEST - نام مهمان) ===== -->
+                <div class="slide slide-guest">
+                    <div class="content">
+                        <div class="orn">❦</div>
+                        <br>
+                        <div class="guest-name-display" id="guestNameDisplay"></div>
+                        <div class="line"></div>
+                        <div class="poem">
+                            در مذهب عاشقان قرار دگر است<br>
+                            وین باده ناب را خمار دگر است<br>
+                            هر علم که در مدرسه حاصل گردد<br>
+                            کار دگر است و عشق کار دگر است
+                        </div>
+                        <div class="scroll-hint">↓ مشاهدهٔ دعوت‌نامه ↓</div>
+                    </div>
+                </div>
+
+                <!-- ===== SLIDE 2 (متن دعوت‌نامه) ===== -->
+                <div class="slide slide-1">
+                    <div class="content">
+                        <br>
+                        <br>
+                        <br>
+                        <div class="orn">❦</div>
+                        <br>
+                        <div class="bismillah">
+                            «وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا
+                            وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ»<br>
+                            ༺ سوره روم، آیه ۲۱ ༻<br>
+                        </div>
+                        <br>
+                        <div class="names">نازنین زهرا ♥ محمد مهدی</div>
+                        <div class="line"></div>
+
+                        <div class="invite-text">
+                            چه زیباست آغاز زندگی‌مان در کنار عزیزانی که دوستشان داریم 🌹<br><br>
+                            از شما دعوت می‌کنیم تا این روز به‌یادماندنی را با ما جشن بگیرید<br>
+                            و با حضور گرمتان، لحظه‌هایمان را پر از عشق و شادی کنید<br>
+                            منتظرتان هستیم با تمام وجود<br>
+                        </div>
+                        <div class="line"></div>
+                        <div class="details">
+                            <div class="detail"><b>تاریخ عروسی</b><span>۱۴۰۵/۰۶/۲۱</span></div>
+                            <div class="detail"><b>روز مراسم</b><span>شنبه</span></div>
+                            <div class="detail"><b>ساعت شروع</b><span>۱۹:۰۰</span></div>
+                        </div>
+                        <div class="scroll-hint">↓ محل برگزاری مراسم ↓</div>
+                    </div>
+                </div>
+
+                <!-- ===== SLIDE 3 (تایمر و نقشه) - اصلاح شده ===== -->
+                <div class="slide slide-2">
+                    <div class="content">
+                        <br>
+                        <br>
+                        <br>
+                        <div class="orn">❦</div>
+                        <div class="count-title">تا آغاز یکی شدنمان</div>
+                        <div class="count">
+                            <div class="t"><strong id="days">۰۰</strong><small>روز</small></div>
+                            <div class="t"><strong id="hours">۰۰</strong><small>ساعت</small></div>
+                            <div class="t"><strong id="minutes">۰۰</strong><small>دقیقه</small></div>
+                            <div class="t"><strong id="seconds">۰۰</strong><small>ثانیه</small></div>
+                        </div>
+                        <div id="countdownDone" class="countdown-done" hidden>مراسم برگزار شد 🌹</div>
+                        <div class="line"></div>
+                        <div class="s2-title">محل برگزاری مراسم</div>
+                        <div class="address-text">یزد، بلوار جمهوری، تالار پذیرایی یزد (تالار یزد)</div>
+                        <!-- باکس مربعی نقشه -->
+                        <div id="mapWrap" class="map-wrap">
+                            <iframe
+                                    src="https://www.google.com/maps?q=31.935501,54.309899&z=17&output=embed"
+                                    loading="lazy"
+                                    title="نقشه محل مراسم"
+                                    style="width:100%; height:100%; border:0;">
+                            </iframe>
+                            <div class="map-tint"></div>
+                            <div class="map-label">تالار یزد (دروازه قرآن) • برای مسیریابی لمس کنید</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== SLIDE 4 (پیام‌ها) ===== -->
+                <div class="slide slide-3">
+                    <div class="content">
+                        <div class="message-card">
+                            <h2>پیام مهمانان</h2>
+                            <p>پیام و آرزوی زیبای خود را برای عروس و داماد بنویسید 🌹</p>
+                            <input id="guestName" class="message-name" type="text" maxlength="40" placeholder="نام شما"
+                                   autocomplete="name">
+                            <textarea id="guestMessage" class="message-input" maxlength="500" placeholder="پیام شما..."></textarea>
+                            <button id="saveMessage" class="message-btn" type="button">ثبت پیام</button>
+                        </div>
+                        <div id="messageCounter" class="message-counter">۰ پیام محبت‌آمیز شما</div>
+                        <div id="messagesList" class="messages-list"></div>
+                        <div id="messagePagination" class="message-pagination"></div>
+                        <div class="signature">
+                            Developed by
+                            <a href="https://t.me/Fateme_zarezadehh" target="_blank">fateme.z</a>
+                            •
+                            <a href="https://eitaa.com/Fateme_zarezadehh" target="_blank">eitaa</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- DOTS -->
+            <div class="dots">
+                <div class="dot active" data-i="0"></div>
+                <div class="dot" data-i="1"></div>
+                <div class="dot" data-i="2"></div>
+                <div class="dot" data-i="3"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ADMIN GEAR -->
+    <button id="adminOpen" class="admin-gear" type="button" aria-label="پنل مدیریت">⚙</button>
+
+    <!-- ADMIN PANEL -->
+    <div id="adminPanel" class="admin-panel">
+        <div class="admin-box">
+
+            <div class="admin-header">
+                <h3>پنل مدیریت</h3>
+            </div>
+
+            <!-- LOGIN -->
+            <div id="adminLogin">
+                <input id="adminPassword" class="admin-pass" type="password" inputmode="numeric" autocomplete="off"
+                       placeholder="رمز مدیریت">
+                <button id="adminLoginBtn" class="admin-btn" type="button">ورود</button>
+            </div>
+
+            <!-- ADMIN CONTENT -->
+            <div id="adminContent" hidden>
+                <div class="admin-tabs">
+                    <button id="messagesTab" class="admin-tab" type="button">💌 مدیریت پیام‌ها</button>
+                    <button id="sharingTab" class="admin-tab" type="button">👥 مدیریت مهمانان</button>
+                </div>
+
+                <!-- MESSAGES SECTION -->
+                <section id="messagesSection" class="admin-section" hidden>
+                    <div class="admin-section-header">
+                        <div>
+                            <h4>مدیریت پیام‌ها</h4>
+                            <p>پیام‌های مهمانان</p>
+                        </div>
+                        <div id="adminMessageCount" class="admin-count">۰</div>
+                    </div>
+                    <div id="adminMessages" class="admin-messages"></div>
+                    <div id="adminMessagePagination" class="admin-pagination"></div>
+                </section>
+
+                <!-- GUEST MANAGEMENT -->
+                <section id="sharingSection" class="admin-section" hidden>
+                    <div class="admin-section-header">
+                        <div>
+                            <h4>مدیریت مهمانان</h4>
+                            <p>ویرایش نام یا حذف لینک</p>
+                        </div>
+                    </div>
+
+                    <!-- CREATE GUEST -->
+                    <div class="guest-create">
+                        <input id="newGuestName" class="admin-pass" type="text" maxlength="100" placeholder="نام مهمان جدید">
+                        <button id="createGuestBtn" class="admin-btn" type="button">ایجاد لینک</button>
+                    </div>
+
+                    <!-- GUEST LIST -->
+                    <div id="guestsList" class="guests-list"></div>
+                    <div id="guestsPagination" class="admin-pagination"></div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div id="toastWrap" class="toast-wrap"></div>
+
+    <!-- MAP MODAL -->
+    <div id="mapModal" class="map-modal">
+        <div class="box">
+            <p>مسیر محل مراسم را با کدام برنامه باز می‌کنید؟</p>
+            <button id="openNeshan" class="opt" type="button">باز کردن با نشان</button>
+            <button id="openBalad" class="opt" type="button">باز کردن با بلد</button>
+            <button id="openGoogle" class="opt" type="button">باز کردن با گوگل‌مپ</button>
+            <button id="closeModal" class="cancel" type="button">انصراف</button>
+        </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+
+</html>
