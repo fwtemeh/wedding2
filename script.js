@@ -275,82 +275,62 @@
     ================================================== */
   
     async function playInvitation() {
-  
-        if (started) {
-            return;
-        }
 
-        // اگر لینک منقضی/حذف شده، ویدیو پخش نشود
+        if (started) return;
+
         if (invitationInvalid) {
             showExpiredInvitation();
             return;
         }
 
-        // منتظر نتیجهٔ چک لینک بمان (اگر هنوز نیامده)
         if (guestToken && !guestInfoReady) {
             return;
         }
-  
+
         started = true;
-  
-        if (start) {
-            start.classList.add("hidden");
-        }
-  
+
+        if (start) start.classList.add("hidden");
+
+        /* شروع ویدئو و موسیقی در همان gesture کاربر */
         try {
-            video.currentTime = 0;
+            if (video) video.currentTime = 0;
         } catch (e) {}
-  
+
         try {
-            music.currentTime = 0;
-        } catch (e) {}
-  
-        if (video) {
-            video.play().catch(function (error) {
-                console.warn(
-                    "Video playback failed:",
-                    error
-                );
-            });
-        }
-  
-        if (music) {
-            music.muted = false;
-  
-            music.play().catch(function (error) {
-                console.warn(
-                    "Music playback failed:",
-                    error
-                );
-  
-                showToast(
-                    "برای پخش موسیقی دوباره روی صفحه لمس کنید.",
-                    "error"
-                );
-            });
-        }
-  
-        if (muteBtn) {
-            muteBtn.classList.add("show");
-        }
-  
-        if (backBtn) {
-            backBtn.classList.add("show");
-        }
-  
-        setTimeout(function () {
-  
-            if (!glow) {
-                return;
+            if (music) {
+                music.currentTime = 0;
+                music.muted = false;
+                music.volume = 1;
             }
-  
+        } catch (e) {}
+
+        const videoPromise = video ? video.play() : Promise.resolve();
+        const musicPromise = music ? music.play() : Promise.resolve();
+
+        Promise.allSettled([videoPromise, musicPromise]).then(function(results) {
+            if (music && results[1] && results[1].status === "rejected") {
+                const resume = function() {
+                    music.muted = false;
+                    music.play().catch(function() {});
+                };
+                document.addEventListener("touchstart", resume, { once: true, passive: true });
+                document.addEventListener("click", resume, { once: true });
+            }
+        });
+
+        if (muteBtn) muteBtn.classList.add("show");
+        if (backBtn) backBtn.classList.add("show");
+
+        if (glow) {
             glow.classList.remove("on");
-  
             void glow.offsetWidth;
-  
             glow.classList.add("on");
-  
-        }, 900);
+        }
+
+        if (letterOverlay) {
+            letterOverlay.classList.remove("show");
+            letterOverlay.setAttribute("aria-hidden", "true");
+        }
     }
   
   
@@ -539,7 +519,7 @@
                  * با رسیدن ویدئو به بخش نامه، متن ظاهر می‌شود.
                  */
                 if (letterOverlay && video.duration) {
-                    const showAt = Math.max(0, video.duration - 7.8);
+                    const showAt = Math.max(0, video.duration - 9.2);
                     if (video.currentTime >= showAt) {
                         if (!letterOverlay.classList.contains("show")) {
                             letterOverlay.classList.add("show");
