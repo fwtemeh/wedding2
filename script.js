@@ -16,6 +16,7 @@
     const music = document.getElementById("music");
     const start = document.getElementById("start");
     const glow = document.getElementById("glow");
+    const letterOverlay = document.getElementById("letterOverlay");
     const invite = document.getElementById("invite");
     const muteBtn = document.getElementById("muteBtn");
     const backBtn = document.getElementById("backBtn");
@@ -444,6 +445,11 @@
         if (glow) {
             glow.classList.remove("on");
         }
+
+        if (letterOverlay) {
+            letterOverlay.classList.remove("show");
+            letterOverlay.setAttribute("aria-hidden", "true");
+        }
   
         if (video) {
             video.pause();
@@ -527,7 +533,24 @@
         video.addEventListener(
             "timeupdate",
             function () {
-  
+
+                /*
+                 * متن نامه در خود ویدئو نیست؛ اینجا زنده روی نامه قرار می‌گیرد.
+                 * با رسیدن ویدئو به بخش نامه، متن ظاهر می‌شود.
+                 */
+                if (letterOverlay && video.duration) {
+                    const showAt = Math.max(0, video.duration - 7.8);
+                    if (video.currentTime >= showAt) {
+                        if (!letterOverlay.classList.contains("show")) {
+                            letterOverlay.classList.add("show");
+                            letterOverlay.setAttribute("aria-hidden", "false");
+                        }
+                    } else {
+                        letterOverlay.classList.remove("show");
+                        letterOverlay.setAttribute("aria-hidden", "true");
+                    }
+                }
+
                 if (
                     video.duration &&
                     video.currentTime >=
@@ -535,7 +558,7 @@
                 ) {
                     showInvitation();
                 }
-  
+
             }
         );
   

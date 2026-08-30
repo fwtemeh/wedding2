@@ -90,7 +90,10 @@ button {
 
   pointer-events: none;
 
-  background: transparent;
+  background:
+    linear-gradient(to bottom,
+      rgba(46, 36, 40, 0.04),
+      rgba(46, 36, 40, 0.12));
 }
 
 /* ==================================================
@@ -273,6 +276,105 @@ button {
   stroke-linejoin: round;
 }
 
+
+/* ==================================================
+   LIVE LETTER TEXT — متن روی نامه داخل ویدئو
+================================================== */
+.letter-overlay {
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  top: 48%;
+  width: 58%;
+  height: 48%;
+  transform: translate(-50%, -50%) scale(.72);
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  direction: rtl;
+  transition: opacity .35s ease;
+}
+
+.letter-overlay.show {
+  opacity: 1;
+  animation: letterTextIn 7.5s ease-out forwards;
+}
+
+.letter-content {
+  width: 100%;
+  padding: 5% 7%;
+  color: #9a737c;
+  font-family: "Noto Naskh Arabic", "Amiri", serif;
+  text-shadow: 0 1px 2px rgba(255,255,255,.55);
+}
+
+.letter-title {
+  font-family: "Aref Ruqaa", "Amiri", serif;
+  font-size: clamp(20px, 5.2vw, 38px);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #b47783;
+}
+
+.letter-line {
+  width: 48%;
+  height: 1px;
+  margin: 3% auto;
+  background: linear-gradient(90deg, transparent, #c8a58d, transparent);
+}
+
+.letter-body {
+  font-size: clamp(9px, 2.55vw, 17px);
+  line-height: 2.05;
+}
+
+.letter-details {
+  margin-top: 4%;
+  display: flex;
+  justify-content: center;
+  gap: clamp(8px, 2.8vw, 20px);
+  font-size: clamp(9px, 2.5vw, 16px);
+  color: #a78472;
+}
+
+.letter-details span {
+  white-space: nowrap;
+}
+
+@keyframes letterTextIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.60);
+  }
+  18% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(.78);
+  }
+  45% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(.94);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+@media (max-width: 360px) {
+  .letter-overlay {
+    width: 57%;
+    height: 46%;
+  }
+  .letter-content {
+    padding: 4% 5%;
+  }
+  .letter-body {
+    line-height: 1.85;
+  }
+}
 
 /* ==================================================
    GLOW
@@ -2365,108 +2467,4 @@ button {
   margin-top: 16px;
   font-size: clamp(13px, 3.2vw, 15px);
   opacity: 0.85;
-}
-
-/* ==================================================
-   LIVE LETTER TEXT OVER VIDEO
-   متن اسلاید اول مستقیماً روی نامه قرار می‌گیرد
-================================================== */
-.letter-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 6;
-  pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-  overflow: hidden;
-  transition: opacity .35s ease, visibility .35s ease;
-}
-
-.letter-overlay.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-.letter-content {
-  position: absolute;
-  left: 50%;
-  top: 18%;
-  width: min(68vw, 310px);
-  min-height: 42%;
-  padding: 5% 5% 7%;
-  transform: translateX(-50%) translateY(0) scale(1);
-  transform-origin: center center;
-  text-align: center;
-  direction: rtl;
-  color: #8b6b73;
-  font-family: "Noto Nastaliq Urdu", "Aref Ruqaa", "Noto Naskh Arabic", "Amiri", serif;
-  text-shadow: 0 1px 2px rgba(255,255,255,.45);
-  will-change: top, transform, opacity;
-}
-
-.letter-orn {
-  font-size: clamp(18px, 5vw, 27px);
-  line-height: 1;
-  margin-bottom: 5px;
-  color: #b49a63;
-}
-
-.letter-guest-name {
-  font-family: "Amiri", "Noto Naskh Arabic", serif;
-  font-weight: 700;
-  font-size: clamp(22px, 6vw, 34px);
-  line-height: 1.45;
-  color: #a86f80;
-  white-space: nowrap;
-}
-
-.letter-line {
-  width: 58%;
-  height: 1px;
-  margin: 7px auto 10px;
-  background: linear-gradient(90deg, transparent, rgba(169,135,112,.75), transparent);
-}
-
-.letter-poem {
-  font-size: clamp(13px, 3.7vw, 18px);
-  line-height: 2.05;
-  font-weight: 700;
-  white-space: nowrap;
-  color: #80626a;
-}
-
-@media (max-width: 360px) {
-  .letter-content {
-    width: 72vw;
-    padding-top: 4%;
-  }
-  .letter-guest-name { font-size: 20px; }
-  .letter-poem { font-size: 12px; line-height: 1.95; }
-}
-
-@media (min-width: 600px) {
-  .letter-content { width: min(62vw, 340px); }
-}
-
-/* ==================================================
-   RAW LETTER PATTERN FOR THE OTHER SLIDES
-   استفاده از همان blank_letter.png بدون تیرگی
-================================================== */
-.slide-guest,
-.slide-1,
-.slide-2,
-.slide-3 {
-  background-image: url("blank_letter.png") !important;
-  background-position: center center !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-}
-
-.slide-2::before {
-  background: url("blank_letter.png") center / cover no-repeat !important;
-  opacity: 1;
-}
-
-.slide-3 {
-  background-image: url("blank_letter.png") !important;
 }
