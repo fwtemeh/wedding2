@@ -90,7 +90,10 @@ button {
 
   pointer-events: none;
 
-  background: transparent;
+  background:
+    linear-gradient(to bottom,
+      rgba(46, 36, 40, 0.04),
+      rgba(46, 36, 40, 0.12));
 }
 
 /* ==================================================
@@ -271,121 +274,6 @@ button {
 
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-
-/* ==================================================
-   LIVE LETTER TEXT — روی برگ نامه، بدون پس‌زمینه
-================================================== */
-.letter-overlay {
-  position: absolute;
-  z-index: 6;
-  left: 50%;
-  top: 55%;
-  width: 70%;
-  height: 67%;
-  transform: translate(-50%, 45%) scale(.55);
-  opacity: 0;
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  direction: rtl;
-  overflow: hidden;
-}
-
-.letter-overlay.show {
-  opacity: 1;
-  animation: letterPaperFollow 7.8s cubic-bezier(.18,.75,.22,1) forwards;
-}
-
-.letter-content {
-  width: 100%;
-  padding: 7% 9% 10%;
-  box-sizing: border-box;
-  background: transparent !important;
-  color: #9a737c;
-  font-family: "Noto Naskh Arabic", "Amiri", serif;
-  text-shadow: 0 1px 2px rgba(255,255,255,.8);
-}
-
-.letter-title {
-  font-family: "Aref Ruqaa", "Amiri", serif;
-  font-size: clamp(20px, 5vw, 38px);
-  font-weight: 700;
-  line-height: 1.35;
-  color: #b47783;
-}
-
-.letter-title span {
-  color: #c99b72;
-  padding: 0 .15em;
-}
-
-.letter-line {
-  width: 48%;
-  height: 1px;
-  margin: 3% auto;
-  background: linear-gradient(90deg, transparent, #c8a58d, transparent);
-}
-
-.letter-body {
-  font-size: clamp(9px, 2.35vw, 17px);
-  line-height: 2;
-}
-
-.letter-details {
-  margin-top: 4%;
-  display: flex;
-  justify-content: center;
-  gap: clamp(8px, 2.8vw, 20px);
-  font-size: clamp(9px, 2.4vw, 16px);
-  color: #a78472;
-}
-
-.letter-details span {
-  white-space: nowrap;
-}
-
-@keyframes letterPaperFollow {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 45%) scale(.55);
-  }
-  12% {
-    opacity: 0;
-    transform: translate(-50%, 34%) scale(.62);
-  }
-  25% {
-    opacity: 1;
-    transform: translate(-50%, 20%) scale(.70);
-  }
-  48% {
-    opacity: 1;
-    transform: translate(-50%, 2%) scale(.84);
-  }
-  72% {
-    opacity: 1;
-    transform: translate(-50%, -12%) scale(.94);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -16%) scale(1);
-  }
-}
-
-@media (max-width: 360px) {
-  .letter-overlay {
-    width: 68%;
-    height: 65%;
-  }
-  .letter-content {
-    padding: 6% 7% 9%;
-  }
-  .letter-body {
-    line-height: 1.85;
-  }
 }
 
 /* ==================================================

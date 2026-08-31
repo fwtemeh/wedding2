@@ -16,7 +16,6 @@
     const music = document.getElementById("music");
     const start = document.getElementById("start");
     const glow = document.getElementById("glow");
-    const letterOverlay = document.getElementById("letterOverlay");
     const invite = document.getElementById("invite");
     const muteBtn = document.getElementById("muteBtn");
     const backBtn = document.getElementById("backBtn");
@@ -275,62 +274,82 @@
     ================================================== */
   
     async function playInvitation() {
+  
+        if (started) {
+            return;
+        }
 
-        if (started) return;
-
+        // اگر لینک منقضی/حذف شده، ویدیو پخش نشود
         if (invitationInvalid) {
             showExpiredInvitation();
             return;
         }
 
+        // منتظر نتیجهٔ چک لینک بمان (اگر هنوز نیامده)
         if (guestToken && !guestInfoReady) {
             return;
         }
-
+  
         started = true;
-
-        if (start) start.classList.add("hidden");
-
-        /* شروع ویدئو و موسیقی در همان gesture کاربر */
+  
+        if (start) {
+            start.classList.add("hidden");
+        }
+  
         try {
-            if (video) video.currentTime = 0;
+            video.currentTime = 0;
         } catch (e) {}
-
+  
         try {
-            if (music) {
-                music.currentTime = 0;
-                music.muted = false;
-                music.volume = 1;
-            }
+            music.currentTime = 0;
         } catch (e) {}
-
-        const videoPromise = video ? video.play() : Promise.resolve();
-        const musicPromise = music ? music.play() : Promise.resolve();
-
-        Promise.allSettled([videoPromise, musicPromise]).then(function(results) {
-            if (music && results[1] && results[1].status === "rejected") {
-                const resume = function() {
-                    music.muted = false;
-                    music.play().catch(function() {});
-                };
-                document.addEventListener("touchstart", resume, { once: true, passive: true });
-                document.addEventListener("click", resume, { once: true });
+  
+        if (video) {
+            video.play().catch(function (error) {
+                console.warn(
+                    "Video playback failed:",
+                    error
+                );
+            });
+        }
+  
+        if (music) {
+            music.muted = false;
+  
+            music.play().catch(function (error) {
+                console.warn(
+                    "Music playback failed:",
+                    error
+                );
+  
+                showToast(
+                    "برای پخش موسیقی دوباره روی صفحه لمس کنید.",
+                    "error"
+                );
+            });
+        }
+  
+        if (muteBtn) {
+            muteBtn.classList.add("show");
+        }
+  
+        if (backBtn) {
+            backBtn.classList.add("show");
+        }
+  
+        setTimeout(function () {
+  
+            if (!glow) {
+                return;
             }
-        });
-
-        if (muteBtn) muteBtn.classList.add("show");
-        if (backBtn) backBtn.classList.add("show");
-
-        if (glow) {
+  
             glow.classList.remove("on");
+  
             void glow.offsetWidth;
+  
             glow.classList.add("on");
-        }
-
-        if (letterOverlay) {
-            letterOverlay.classList.remove("show");
-            letterOverlay.setAttribute("aria-hidden", "true");
-        }
+  
+        }, 900);
     }
   
   
@@ -425,11 +444,6 @@
         if (glow) {
             glow.classList.remove("on");
         }
-
-        if (letterOverlay) {
-            letterOverlay.classList.remove("show");
-            letterOverlay.setAttribute("aria-hidden", "true");
-        }
   
         if (video) {
             video.pause();
@@ -513,24 +527,7 @@
         video.addEventListener(
             "timeupdate",
             function () {
-
-                /*
-                 * متن نامه در خود ویدئو نیست؛ اینجا زنده روی نامه قرار می‌گیرد.
-                 * با رسیدن ویدئو به بخش نامه، متن ظاهر می‌شود.
-                 */
-                if (letterOverlay && video.duration) {
-                    const showAt = Math.max(0, video.duration - 9.2);
-                    if (video.currentTime >= showAt) {
-                        if (!letterOverlay.classList.contains("show")) {
-                            letterOverlay.classList.add("show");
-                            letterOverlay.setAttribute("aria-hidden", "false");
-                        }
-                    } else {
-                        letterOverlay.classList.remove("show");
-                        letterOverlay.setAttribute("aria-hidden", "true");
-                    }
-                }
-
+  
                 if (
                     video.duration &&
                     video.currentTime >=
@@ -538,7 +535,7 @@
                 ) {
                     showInvitation();
                 }
-
+  
             }
         );
   
