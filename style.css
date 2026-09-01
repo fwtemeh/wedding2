@@ -337,7 +337,7 @@ button {
 }
 
 /* ==================================================
-   SLIDE GUEST - image.png با 97% و کشیده
+   SLIDE GUEST - image.png با 97%
 ================================================== */
 
 .slide-guest {
@@ -389,7 +389,7 @@ button {
 }
 
 /* ==================================================
-   SLIDE 2 - شفاف با محتوای کشیده
+   SLIDE 2 - شفاف
 ================================================== */
 
 .slide-2 {
@@ -407,7 +407,7 @@ button {
 }
 
 /* ==================================================
-   SLIDE 3 - برگردانده شده با overlay تیره
+   SLIDE 3 - image.png با 97% (مثل اسلاید 1 و گوست)
 ================================================== */
 
 .slide-3 {
@@ -420,9 +420,9 @@ button {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
-  background: rgba(0, 0, 0, 0.35);
+  background: url("image.png") center / 97% no-repeat;
 }
 
 /* ==================================================
@@ -441,7 +441,7 @@ button {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #fff;
+  color: #000;
   overflow: hidden;
 }
 
@@ -481,23 +481,22 @@ button {
 }
 
 /* ==================================================
-   GUEST NAME DISPLAY - بزرگتر با فاصله بیشتر
+   GUEST NAME DISPLAY - مشکی
 ================================================== */
 
 .guest-name-display {
   font-family: "Amiri", "Noto Naskh Arabic", serif;
   font-weight: 700;
   font-size: clamp(32px, 9vw, 52px);
-  color: #fff;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7),
-               0 4px 20px rgba(0, 0, 0, 0.5);
+  color: #000;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
   text-align: center;
   padding: 30px 40px;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   max-width: 90%;
   line-height: 1.8;
   letter-spacing: 1px;
@@ -517,19 +516,19 @@ button {
 }
 
 /* ==================================================
-   شعر اسلاید گوست - بزرگتر و با فاصله
+   شعر اسلاید گوست - مشکی
 ================================================== */
 
 .slide-guest .poem {
   font-size: clamp(18px, 5vw, 24px);
   line-height: 2.5;
-  color: #fff;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  color: #000;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
   margin: 15px 0 10px;
   max-width: 85%;
   font-family: "Amiri", "Noto Naskh Arabic", serif;
   font-weight: 400;
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.1);
   padding: 15px 25px;
   border-radius: 12px;
   backdrop-filter: blur(2px);
@@ -538,9 +537,9 @@ button {
 
 .slide-guest .orn {
   font-size: clamp(24px, 6vw, 32px);
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.5);
   line-height: 1;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
   margin-bottom: 5px;
 }
 
@@ -548,12 +547,12 @@ button {
   width: 50%;
   height: 1px;
   flex-shrink: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.2), transparent);
   margin: 15px 0;
 }
 
 /* ==================================================
-   SCROLL HINT - موقعیت بهتر
+   SCROLL HINT
 ================================================== */
 
 .slide-guest .scroll-hint {
@@ -565,17 +564,17 @@ button {
   margin: 30px auto 0;
   width: max-content;
   max-width: 85%;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(0, 0, 0, 0.7);
   font-size: clamp(13px, 2.8vw, 17px);
   font-family: "Amiri", "Noto Naskh Arabic", serif;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
   animation: bounceHint 2s ease-in-out infinite;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.15);
   padding: 8px 20px;
   border-radius: 20px;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   letter-spacing: 1px;
   white-space: nowrap;
   text-align: center;
@@ -590,17 +589,17 @@ button {
   margin: 0 auto;
   width: max-content;
   max-width: 85%;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(0, 0, 0, 0.7);
   font-size: clamp(12px, 2.5vw, 16px);
   font-family: "Amiri", "Noto Naskh Arabic", serif;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
   animation: bounceHint 2s ease-in-out infinite;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.15);
   padding: 6px 16px;
   border-radius: 20px;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   letter-spacing: 1px;
   white-space: nowrap;
   text-align: center;
@@ -617,15 +616,15 @@ button {
 }
 
 /* ==================================================
-   TEXT
+   TEXT - مشکی
 ================================================== */
 
 .bismillah {
   font-family: "Noto Nastaliq Urdu", "Aref Ruqaa", "Noto Naskh Arabic", "Amiri", serif;
   font-weight: 700;
   font-size: clamp(10px, 3.2vw, 16px);
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  color: #000;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
   line-height: 2.2;
   margin-bottom: 8px;
   white-space: normal;
@@ -637,8 +636,8 @@ button {
   font-family: "Amiri", serif;
   font-weight: 700;
   font-size: clamp(22px, 7vw, 32px);
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  color: #000;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
   line-height: 1.6;
   width: 100%;
 }
@@ -646,8 +645,8 @@ button {
 .invite-text {
   font-size: clamp(14px, 3.6vw, 18px);
   line-height: 2;
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  color: #000;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
   margin: 12px 0 16px;
   max-width: 100%;
   white-space: normal;
@@ -658,32 +657,32 @@ button {
 .poem {
   font-size: clamp(16px, 4.6vw, 21px);
   line-height: 2.15;
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  color: #000;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
   margin: 0 0 8px;
 }
 
 .orn {
   font-size: clamp(20px, 5vw, 28px);
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.4);
   line-height: 1;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
 }
 
 /* ==================================================
-   LINE
+   LINE - مشکی
 ================================================== */
 
 .line {
   width: 65%;
   height: 1px;
   flex-shrink: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.2), transparent);
   margin: 12px 0;
 }
 
 /* ==================================================
-   DETAILS
+   DETAILS - مشکی
 ================================================== */
 
 .details {
@@ -696,9 +695,9 @@ button {
 
 .detail {
   min-width: 0;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 8px;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   padding: 8px 2px;
@@ -707,29 +706,29 @@ button {
 
 .detail b {
   display: block;
-  color: #fff;
+  color: #000;
   font-size: clamp(13px, 3.6vw, 18px);
   margin-bottom: 2px;
   white-space: nowrap;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.2);
 }
 
 .detail span {
   display: block;
-  color: #fff;
+  color: #000;
   font-size: clamp(13px, 3.6vw, 18px);
   white-space: nowrap;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.2);
 }
 
 /* ==================================================
-   COUNTDOWN
+   COUNTDOWN - مشکی
 ================================================== */
 
 .count-title {
   font-size: clamp(18px, 5vw, 24px);
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  color: #000;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
   line-height: 1.8;
 }
 
@@ -751,16 +750,16 @@ button {
   display: block;
   font-size: clamp(20px, 6vw, 28px);
   font-weight: 700;
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  color: #000;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
   line-height: 1.25;
 }
 
 .t small {
   display: block;
   font-size: clamp(10px, 3vw, 13px);
-  color: rgba(255, 255, 255, 0.8);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.2);
   margin-top: 3px;
 }
 
@@ -768,13 +767,13 @@ button {
   margin-top: 16px;
   font-size: clamp(17px, 4.8vw, 22px);
   font-weight: 700;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #000;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 999px;
   padding: 10px 24px;
   display: inline-block;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
 }
 
 .countdown-done[hidden] {
@@ -782,20 +781,20 @@ button {
 }
 
 /* ==================================================
-   MAP
+   MAP - مشکی
 ================================================== */
 
 .s2-title {
   font-size: clamp(19px, 5.2vw, 25px);
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  color: #000;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
   margin-bottom: 12px;
 }
 
 .address-text {
   font-size: clamp(14px, 4vw, 19px);
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  color: #000;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
   line-height: 1.8;
   margin-top: 8px;
 }
@@ -809,9 +808,9 @@ button {
   flex: none;
   overflow: hidden;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2);
   touch-action: manipulation;
 }
 
@@ -829,8 +828,8 @@ button {
   inset: 0;
   pointer-events: none;
   background: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.15),
-      rgba(0, 0, 0, 0.35));
+      rgba(255, 255, 255, 0.05),
+      rgba(0, 0, 0, 0.05));
 }
 
 .map-label {
@@ -840,15 +839,15 @@ button {
   transform: translateX(-50%);
   max-width: 90%;
   white-space: nowrap;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 999px;
   padding: 5px 12px;
   font-size: clamp(12px, 3.5vw, 16px);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: none;
 }
 
 /* ==================================================
@@ -868,7 +867,7 @@ button {
   padding: 4px;
   border-radius: 9px;
   background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .qr-box img {
@@ -896,14 +895,14 @@ button {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: background 0.25s ease, transform 0.25s ease;
   touch-action: manipulation;
 }
 
 .dot.active {
-  background: #fff;
+  background: #000;
   transform: scale(1.35);
 }
 
@@ -1007,34 +1006,34 @@ button {
 }
 
 /* ==================================================
-   MESSAGES
+   MESSAGES - مشکی
 ================================================== */
 
 .message-card {
   width: 100%;
   max-width: 360px;
   padding: 20px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 16px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
   align-self: flex-start;
 }
 
 .message-card h2 {
   margin: 0 0 6px;
-  color: #fff;
+  color: #000;
   font-size: clamp(22px, 5.5vw, 26px);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
 }
 
 .message-card p {
   margin: 0 0 16px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.7);
   font-size: clamp(13px, 3.2vw, 14px);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.2);
 }
 
 /* ==================================================
@@ -1044,7 +1043,7 @@ button {
 .message-input,
 .message-name {
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.9);
   padding: 12px 14px;
@@ -1067,7 +1066,7 @@ button {
 }
 
 /* ==================================================
-   GUEST MESSAGE
+   GUEST MESSAGE - مشکی
 ================================================== */
 
 .guest-message,
@@ -1080,29 +1079,29 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  color: #fff;
+  color: #000;
   font-size: clamp(14px, 3.6vw, 15px);
   font-weight: 700;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.2);
 }
 
 .guest-message .msg-heart {
-  color: #ff6b8a;
+  color: #e74c6f;
   font-size: 12px;
 }
 
 .guest-message .msg-text {
   font-size: clamp(14px, 3.6vw, 15px);
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.8);
   line-height: 1.7;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   margin-top: 2px;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.1);
 }
 
 /* ==================================================
-   MESSAGES LIST
+   MESSAGES LIST - مشکی
 ================================================== */
 
 .messages-list {
@@ -1111,11 +1110,11 @@ button {
   margin-top: 6px;
   display: flex;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 16px;
   padding: 6px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   align-self: flex-start;
@@ -1126,7 +1125,7 @@ button {
   align-items: flex-start;
   gap: 10px;
   padding: 14px 0;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
   text-align: right;
 }
 
@@ -1137,7 +1136,7 @@ button {
 .guest-message.empty {
   justify-content: center;
   padding: 18px 0;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .guest-message .avatar {
@@ -1151,7 +1150,7 @@ button {
   color: #fff;
   font-size: 13px;
   font-weight: 700;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .guest-message .msg-body {
@@ -1169,13 +1168,13 @@ button {
 .guest-message .msg-time {
   flex-shrink: 0;
   font-size: 10.5px;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.4);
   direction: ltr;
   white-space: nowrap;
 }
 
 /* ==================================================
-   MESSAGE COUNTER
+   MESSAGE COUNTER - مشکی
 ================================================== */
 
 .message-counter {
@@ -1183,31 +1182,31 @@ button {
   align-items: center;
   gap: 4px;
   font-size: clamp(11px, 2.8vw, 0.75rem);
-  color: #fff;
+  color: #000;
   margin: 10px 0 8px;
   letter-spacing: 0.3px;
   align-self: flex-start;
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 999px;
   padding: 6px 16px;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.2);
 }
 
 .message-counter .counter-num {
   font-weight: 700;
-  color: #fff;
+  color: #000;
 }
 
 .message-counter .counter-heart {
-  color: #ff6b8a;
+  color: #e74c6f;
   font-size: 0.8em;
 }
 
 /* ==================================================
-   MESSAGE PAGINATION
+   MESSAGE PAGINATION - مشکی
 ================================================== */
 
 .message-pagination,
@@ -1223,10 +1222,10 @@ button {
 
 .message-page-btn {
   padding: 4px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 5px;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  color: #000;
   font-size: clamp(11px, 2.8vw, 12px);
   cursor: pointer;
   transition: all 0.15s ease;
@@ -1234,13 +1233,13 @@ button {
   min-width: 34px;
   min-height: 34px;
   touch-action: manipulation;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.2);
 }
 
 .message-page-btn.active {
-  background: rgba(255, 255, 255, 0.3);
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.15);
+  color: #000;
+  border-color: rgba(0, 0, 0, 0.3);
 }
 
 .message-page-btn:disabled {
@@ -1307,22 +1306,22 @@ button {
 }
 
 /* ==================================================
-   SIGNATURE
+   SIGNATURE - مشکی
 ================================================== */
 
 .signature {
   margin-top: 20px;
   font-size: clamp(11px, 2.8vw, 12px);
   letter-spacing: 0.3px;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(0, 0, 0, 0.6);
   text-align: center;
   align-self: flex-start;
   width: 100%;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.2);
 }
 
 .signature a {
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(0, 0, 0, 0.8);
   text-decoration: none;
   font-weight: 700;
   transition: opacity 0.2s ease;
@@ -1355,11 +1354,11 @@ button {
   width: 100%;
   padding: 13px 16px;
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.15);
   opacity: 0;
   transform: translateY(10px) scale(0.97);
   transition: opacity 0.35s ease, transform 0.35s ease;
@@ -1393,7 +1392,7 @@ button {
   min-width: 0;
   font-size: clamp(13px, 3.6vw, 15px);
   line-height: 1.6;
-  color: #fff;
+  color: #000;
   text-align: right;
 }
 
