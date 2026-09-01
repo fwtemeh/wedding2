@@ -337,7 +337,7 @@ button {
 }
 
 /* ==================================================
-   SLIDE 1 - با تصویر کوچکتر و بدون پس‌زمینه سفید
+   SLIDE 1
 ================================================== */
 
 .slide-1 {
@@ -345,13 +345,13 @@ button {
   background-color: #f5f0f2;
   background-image: url("image.png");
   background-position: center center;
-  background-size: 75% auto; /* کوچکتر - 75% عرض */
+  background-size: 75% auto;
   background-repeat: no-repeat;
-  background-blend-mode: multiply; /* حذف پس‌زمینه سفید */
+  background-blend-mode: multiply;
 }
 
 /* ==================================================
-   SLIDE 2 - با تصویر کوچکتر
+   SLIDE 2
 ================================================== */
 
 .slide-2 {
@@ -371,8 +371,8 @@ button {
   z-index: 0;
   pointer-events: none;
   transform: scale(-1, -1);
-  background: url("image.png") center / 65% auto no-repeat; /* کوچکتر - 65% عرض */
-  opacity: 0.12; /* کمرنگ‌تر برای پس‌زمینه */
+  background: url("image.png") center / 65% auto no-repeat;
+  opacity: 0.12;
   background-blend-mode: multiply;
 }
 
@@ -381,7 +381,7 @@ button {
 }
 
 /* ==================================================
-   SLIDE GUEST - با تصویر کوچکتر و بدون پس‌زمینه سفید
+   SLIDE GUEST - فقط اندازه تصویر بزرگتر و حذف کادر سفید
 ================================================== */
 
 .slide-guest {
@@ -389,9 +389,9 @@ button {
   background-color: #f5f0f2;
   background-image: url("invitation.png");
   background-position: center center;
-  background-size: 80% auto; /* کوچکتر - 80% عرض */
+  background-size: 92% auto;
   background-repeat: no-repeat;
-  background-blend-mode: multiply; /* حذف پس‌زمینه سفید */
+  background-blend-mode: multiply;
 }
 
 .slide-guest .content {
@@ -469,7 +469,7 @@ button {
 }
 
 /* ==================================================
-   SLIDE 3 - با تصویر کوچکتر
+   SLIDE 3
 ================================================== */
 
 .slide-3 {
@@ -477,7 +477,7 @@ button {
   background:
     linear-gradient(rgba(46, 36, 40, 0.35),
       rgba(46, 36, 40, 0.5)),
-    url("image.png") center / 70% auto no-repeat; /* کوچکتر - 70% عرض */
+    url("image.png") center / 70% auto no-repeat;
   background-blend-mode: multiply;
 }
 
