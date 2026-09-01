@@ -412,7 +412,7 @@ button {
 }
 
 /* ==================================================
-   SLIDE 4 (اسلاید جدید - محل برگزاری) - image.png با 97%
+   SLIDE 4 (محل برگزاری) - image.png با 97%
 ================================================== */
 
 .slide-location {
@@ -445,7 +445,7 @@ button {
 }
 
 /* ==================================================
-   SLIDE 5 (پیام‌ها) - بدون بک‌گراند (حذف شده)
+   SLIDE 5 (پیام‌ها) - بدون بک‌گراند
 ================================================== */
 
 .slide-3 {
@@ -520,6 +520,58 @@ button {
 }
 
 /* ==================================================
+   ORN - صورتی برای همه اسلایدها
+================================================== */
+
+.orn {
+  font-size: clamp(18px, 4.8vw, 26px);
+  color: #e91e63;
+  line-height: 1;
+  text-shadow: none;
+  display: inline-block;
+  animation: pulseOrn 2s ease-in-out infinite;
+}
+
+.slide-guest .orn {
+  font-size: clamp(22px, 5.8vw, 30px);
+  color: #e91e63;
+  line-height: 1;
+  text-shadow: none;
+  margin-bottom: 5px;
+}
+
+.slide-1 .orn {
+  color: #f06292;
+}
+
+.slide-2 .orn {
+  color: #f8bbd0;
+}
+
+.slide-location .orn {
+  font-size: clamp(22px, 5.8vw, 30px);
+  color: #e91e63;
+  line-height: 1;
+  text-shadow: none;
+  margin-bottom: 5px;
+}
+
+.slide-3 .orn {
+  color: #f06292;
+}
+
+@keyframes pulseOrn {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* ==================================================
    GUEST NAME DISPLAY - بدون کادر
 ================================================== */
 
@@ -573,14 +625,6 @@ button {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   border: none;
-}
-
-.slide-guest .orn {
-  font-size: clamp(17px, 4.8vw, 25px);
-  color: rgba(0, 0, 0, 0.4);
-  line-height: 1;
-  text-shadow: none;
-  margin-bottom: 5px;
 }
 
 .slide-guest .line {
@@ -645,14 +689,33 @@ button {
   text-align: center;
 }
 
-/* راهنمای اسکرول پایین اسلاید دوم - "تاریخ برگزاری مراسم" */
-.slide-1 .scroll-hint {
-  content: "↓ تاریخ برگزاری مراسم ↓";
+.location-scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  margin: 0;
+  width: max-content;
+  max-width: 85%;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: clamp(11px, 2.6vw, 15px);
+  font-family: "Amiri", "Noto Naskh Arabic", serif;
+  text-shadow: none;
+  animation: bounceHint 2s ease-in-out infinite;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  letter-spacing: 1px;
+  white-space: nowrap;
+  text-align: center;
 }
 
 @keyframes bounceHint {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateX(-50%) translateY(0);
   }
   50% {
@@ -711,14 +774,6 @@ button {
   margin: 0 0 8px;
 }
 
-.slide-guest .orn,
-.slide-1 .orn {
-  font-size: clamp(13px, 3.8vw, 21px);
-  color: rgba(0, 0, 0, 0.4);
-  line-height: 1;
-  text-shadow: none;
-}
-
 /* ==================================================
    LINE
 ================================================== */
@@ -741,7 +796,7 @@ button {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 5px;
   margin-top: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .detail {
@@ -845,31 +900,6 @@ button {
   text-shadow: none;
 }
 
-.location-scroll-hint {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  right: auto;
-  transform: translateX(-50%);
-  margin: 0;
-  width: max-content;
-  max-width: 85%;
-  color: rgba(0, 0, 0, 0.6);
-  font-size: clamp(11px, 2.6vw, 15px);
-  font-family: "Amiri", "Noto Naskh Arabic", serif;
-  text-shadow: none;
-  animation: bounceHint 2s ease-in-out infinite;
-  background: rgba(255, 255, 255, 0.15);
-  padding: 6px 16px;
-  border-radius: 20px;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  letter-spacing: 1px;
-  white-space: nowrap;
-  text-align: center;
-}
-
 /* ==================================================
    COUNTDOWN
 ================================================== */
@@ -887,7 +917,7 @@ button {
   justify-content: center;
   align-items: center;
   gap: clamp(4px, 2.5vw, 10px);
-  margin-top: 14px;
+  margin-top: 5px;
 }
 
 .t {
@@ -926,30 +956,6 @@ button {
 }
 
 .countdown-done[hidden] {
-  display: none;
-}
-
-/* ==================================================
-   MAP (اسلاید قدیمی - حذف شده)
-================================================== */
-
-.s2-title {
-  display: none;
-}
-
-.address-text {
-  display: none;
-}
-
-.map-wrap {
-  display: none;
-}
-
-.map-tint {
-  display: none;
-}
-
-.map-label {
   display: none;
 }
 
@@ -1843,6 +1849,9 @@ button {
   .location-address {
     font-size: clamp(11px, 3.5vw, 15px);
   }
+  .orn {
+    font-size: clamp(14px, 4vw, 20px);
+  }
 }
 
 /* ==================================================
@@ -1956,6 +1965,9 @@ button {
   .guest-message {
     padding: 10px 0;
     gap: 8px;
+  }
+  .orn {
+    font-size: clamp(14px, 4vw, 20px);
   }
 }
 
@@ -2131,6 +2143,9 @@ button {
   .signature {
     font-size: 8px;
     margin-top: 10px;
+  }
+  .orn {
+    font-size: clamp(12px, 3.5vw, 16px);
   }
 }
 
