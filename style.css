@@ -455,7 +455,7 @@ button {
 
   background-color: #f5f0f2;
 
-  background-image: url("../image.jpg");
+  background-image: url("../image.png");
 
   background-position: center center;
 
@@ -496,7 +496,7 @@ button {
   transform: scale(-1, -1);
 
   background:
-    url("../image.jpg") center / cover no-repeat;
+    url("../image.png") center / cover no-repeat;
 }
 
 .slide-2::-webkit-scrollbar {
@@ -510,7 +510,7 @@ button {
 .slide-guest {
   overflow: hidden;
   background-color: #f5f0f2;
-  background-image: url("../invitation.jpg");
+  background-image: url("../invitation.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -603,7 +603,7 @@ button {
   background:
     linear-gradient(rgba(46, 36, 40, 0.35),
       rgba(46, 36, 40, 0.5)),
-    url("../image.jpg") center / cover no-repeat;
+    url("../image.png") center / cover no-repeat;
 }
 
 /* ==================================================
@@ -2326,7 +2326,7 @@ button {
   padding: 24px;
   background:
     linear-gradient(rgba(46, 36, 40, 0.45), rgba(46, 36, 40, 0.55)),
-    url("../invitation.jpg") center / cover no-repeat;
+    url("../invitation.png") center / cover no-repeat;
 }
 
 #expiredOverlay .expired-card {
