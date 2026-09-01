@@ -99,21 +99,23 @@
                         </div>
                         <div class="line"></div>
                         
-                        <div class="scroll-hint">↓ محل برگزاری مراسم ↓</div>
+                        <div class="scroll-hint">↓ تاریخ برگزاری مراسم ↓</div>
                     </div>
                 </div>
 
-                <!-- ===== SLIDE 3 (تایمر و نقشه) - اصلاح شده ===== -->
+                <!-- ===== SLIDE 3 (تایمر) ===== -->
                 <div class="slide slide-2">
                     <div class="content">
                         
                         <div class="orn">❦</div>
+                        
+                        <!-- باکس‌های تاریخ عروسی (انتقال داده شده به اینجا) -->
                         <div class="details">
                             <div class="detail"><b>تاریخ عروسی</b><span>۱۴۰۵/۰۶/۲۱</span></div>
                             <div class="detail"><b>روز مراسم</b><span>شنبه</span></div>
                             <div class="detail"><b>ساعت شروع</b><span>۱۹:۰۰</span></div>
                         </div>
-                     <br>
+                     
                         <div class="count-title">تا آغاز یکی شدنمان</div>
                         <div class="count">
                             <div class="t"><strong id="days">۰۰</strong><small>روز</small></div>
@@ -122,24 +124,34 @@
                             <div class="t"><strong id="seconds">۰۰</strong><small>ثانیه</small></div>
                         </div>
                         <div id="countdownDone" class="countdown-done" hidden>مراسم برگزار شد 🌹</div>
-                        <div class="line"></div>
-                        <div class="s2-title">محل برگزاری مراسم</div>
-                        <div class="address-text">یزد، بلوار جمهوری، تالار پذیرایی یزد (تالار یزد)</div>
-                        <!-- باکس مربعی نقشه -->
-                        <div id="mapWrap" class="map-wrap">
+                        
+                    </div>
+                </div>
+
+                <!-- ===== SLIDE 4 (محل برگزاری مراسم - اسلاید جدید) ===== -->
+                <div class="slide slide-location">
+                    <div class="content">
+                        <div class="orn">❦</div>
+                        <br>
+                        <div class="location-title">محل برگزاری مراسم</div>
+                        <div class="location-address">یزد، بلوار جمهوری، تالار پذیرایی یزد (تالار یزد)</div>
+                        
+                        <div id="locationMapWrap" class="location-map-wrap">
                             <iframe
                                     src="https://www.google.com/maps?q=31.935501,54.309899&z=17&output=embed"
                                     loading="lazy"
                                     title="نقشه محل مراسم"
                                     style="width:100%; height:100%; border:0;">
                             </iframe>
-                            <div class="map-tint"></div>
-                            <div class="map-label">تالار یزد (دروازه قرآن) • برای مسیریابی لمس کنید</div>
+                            <div class="location-map-tint"></div>
+                            <div class="location-map-label">تالار یزد (دروازه قرآن) • برای مسیریابی لمس کنید</div>
                         </div>
+                        
+                        <div class="location-scroll-hint">↓ پیام‌های شما ↓</div>
                     </div>
                 </div>
 
-                <!-- ===== SLIDE 4 (پیام‌ها) ===== -->
+                <!-- ===== SLIDE 5 (پیام‌ها - بدون بک‌گراند) ===== -->
                 <div class="slide slide-3">
                     <div class="content">
                         <div class="message-card">
@@ -153,9 +165,6 @@
                         <div id="messageCounter" class="message-counter">۰ پیام محبت‌آمیز شما</div>
                         <div id="messagesList" class="messages-list"></div>
                         <div id="messagePagination" class="message-pagination"></div>
-                     <br>
-                     <br>
-                     <br>
                         <div class="signature">
                             Developed by
                             <a href="https://t.me/Fateme_zarezadehh" target="_blank">fateme.z</a>
@@ -173,6 +182,7 @@
                 <div class="dot" data-i="1"></div>
                 <div class="dot" data-i="2"></div>
                 <div class="dot" data-i="3"></div>
+                <div class="dot" data-i="4"></div>
             </div>
 
         </div>
