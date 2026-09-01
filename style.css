@@ -282,7 +282,7 @@ button {
 .frame {
   position: relative;
   width: min(100%, 430px);
-  height: min(96dvh, 820px);
+  height: min(96dvh, 850px);
   max-height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 8px);
   overflow: hidden;
   border-radius: 16px;
@@ -337,13 +337,15 @@ button {
 }
 
 /* ==================================================
-   SLIDE GUEST - image.png با 97%
+   SLIDE GUEST - image.png با 97% و کشیده
 ================================================== */
 
 .slide-guest {
   position: relative;
   overflow: hidden;
   background: transparent !important;
+  min-height: 100%;
+  height: 100%;
 }
 
 .slide-guest::before {
@@ -358,9 +360,13 @@ button {
 .slide-guest .content {
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 50px 20px;
   position: relative;
   z-index: 2;
+  min-height: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ==================================================
@@ -383,7 +389,7 @@ button {
 }
 
 /* ==================================================
-   SLIDE 2 - شفاف (فقط ویدیو پس‌زمینه)
+   SLIDE 2 - شفاف با محتوای کشیده
 ================================================== */
 
 .slide-2 {
@@ -429,7 +435,7 @@ button {
   width: 100%;
   height: 100%;
   z-index: 2;
-  padding: 28px 22px 55px;
+  padding: 30px 22px 55px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -441,7 +447,8 @@ button {
 
 .slide-1 .content {
   justify-content: flex-start;
-  padding-top: 56px;
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
 .slide-2 .content {
@@ -450,7 +457,7 @@ button {
   width: 100%;
   height: auto;
   min-height: 100%;
-  padding: 32px 20px 90px;
+  padding: 50px 20px 100px;
   justify-content: flex-start;
   overflow: visible;
 }
@@ -458,7 +465,7 @@ button {
 .slide-guest .content {
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 50px 20px;
 }
 
 .slide-3 .content {
@@ -467,34 +474,35 @@ button {
   height: auto;
   min-height: 100%;
   justify-content: flex-start;
-  padding: 30px 18px 72px;
+  padding: 50px 20px 80px;
   overflow: visible;
   align-items: flex-start;
   padding-right: 28px;
 }
 
 /* ==================================================
-   GUEST NAME DISPLAY
+   GUEST NAME DISPLAY - بزرگتر با فاصله بیشتر
 ================================================== */
 
 .guest-name-display {
   font-family: "Amiri", "Noto Naskh Arabic", serif;
   font-weight: 700;
-  font-size: clamp(28px, 8vw, 48px);
+  font-size: clamp(32px, 9vw, 52px);
   color: #fff;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7),
                0 4px 20px rgba(0, 0, 0, 0.5);
   text-align: center;
-  padding: 20px 30px;
+  padding: 30px 40px;
   background: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   max-width: 90%;
-  line-height: 1.6;
+  line-height: 1.8;
   letter-spacing: 1px;
   animation: fadeInName 1s ease-out;
+  margin: 20px 0;
 }
 
 @keyframes fadeInName {
@@ -509,8 +517,69 @@ button {
 }
 
 /* ==================================================
-   SCROLL HINT
+   شعر اسلاید گوست - بزرگتر و با فاصله
 ================================================== */
+
+.slide-guest .poem {
+  font-size: clamp(18px, 5vw, 24px);
+  line-height: 2.5;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  margin: 15px 0 10px;
+  max-width: 85%;
+  font-family: "Amiri", "Noto Naskh Arabic", serif;
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 15px 25px;
+  border-radius: 12px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.slide-guest .orn {
+  font-size: clamp(24px, 6vw, 32px);
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  margin-bottom: 5px;
+}
+
+.slide-guest .line {
+  width: 50%;
+  height: 1px;
+  flex-shrink: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  margin: 15px 0;
+}
+
+/* ==================================================
+   SCROLL HINT - موقعیت بهتر
+================================================== */
+
+.slide-guest .scroll-hint {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  transform: none;
+  margin: 30px auto 0;
+  width: max-content;
+  max-width: 85%;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(13px, 2.8vw, 17px);
+  font-family: "Amiri", "Noto Naskh Arabic", serif;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  animation: bounceHint 2s ease-in-out infinite;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 8px 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  letter-spacing: 1px;
+  white-space: nowrap;
+  text-align: center;
+}
 
 .scroll-hint {
   position: absolute;
@@ -554,11 +623,11 @@ button {
 .bismillah {
   font-family: "Noto Nastaliq Urdu", "Aref Ruqaa", "Noto Naskh Arabic", "Amiri", serif;
   font-weight: 700;
-  font-size: clamp(9px, 3.0vw, 15px);
+  font-size: clamp(10px, 3.2vw, 16px);
   color: #fff;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-  line-height: 2;
-  margin-bottom: 6px;
+  line-height: 2.2;
+  margin-bottom: 8px;
   white-space: normal;
   max-width: 100%;
   text-align: center;
@@ -567,19 +636,19 @@ button {
 .names {
   font-family: "Amiri", serif;
   font-weight: 700;
-  font-size: clamp(20px, 6.4vw, 29px);
+  font-size: clamp(22px, 7vw, 32px);
   color: #fff;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-  line-height: 1.5;
+  line-height: 1.6;
   width: 100%;
 }
 
 .invite-text {
-  font-size: clamp(13px, 3.4vw, 17px);
-  line-height: 1.9;
+  font-size: clamp(14px, 3.6vw, 18px);
+  line-height: 2;
   color: #fff;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-  margin: 10px 0 14px;
+  margin: 12px 0 16px;
   max-width: 100%;
   white-space: normal;
   overflow: visible;
@@ -610,7 +679,7 @@ button {
   height: 1px;
   flex-shrink: 0;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  margin: 10px 0;
+  margin: 12px 0;
 }
 
 /* ==================================================
@@ -621,8 +690,8 @@ button {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 5px;
-  margin-top: 14px;
+  gap: 6px;
+  margin-top: 16px;
 }
 
 .detail {
@@ -632,14 +701,14 @@ button {
   background: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  padding: 7px 2px;
+  padding: 8px 2px;
   overflow: hidden;
 }
 
 .detail b {
   display: block;
   color: #fff;
-  font-size: clamp(12px, 3.4vw, 17px);
+  font-size: clamp(13px, 3.6vw, 18px);
   margin-bottom: 2px;
   white-space: nowrap;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
@@ -648,7 +717,7 @@ button {
 .detail span {
   display: block;
   color: #fff;
-  font-size: clamp(12px, 3.4vw, 17px);
+  font-size: clamp(13px, 3.6vw, 18px);
   white-space: nowrap;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
@@ -658,7 +727,7 @@ button {
 ================================================== */
 
 .count-title {
-  font-size: clamp(17px, 4.8vw, 22px);
+  font-size: clamp(18px, 5vw, 24px);
   color: #fff;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   line-height: 1.8;
@@ -669,18 +738,18 @@ button {
   direction: ltr;
   justify-content: center;
   align-items: center;
-  gap: clamp(3px, 2vw, 8px);
-  margin-top: 12px;
+  gap: clamp(4px, 2.5vw, 10px);
+  margin-top: 14px;
 }
 
 .t {
   text-align: center;
-  min-width: clamp(34px, 11vw, 42px);
+  min-width: clamp(38px, 12vw, 46px);
 }
 
 .t strong {
   display: block;
-  font-size: clamp(18px, 5.5vw, 26px);
+  font-size: clamp(20px, 6vw, 28px);
   font-weight: 700;
   color: #fff;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
@@ -689,21 +758,21 @@ button {
 
 .t small {
   display: block;
-  font-size: clamp(9px, 2.8vw, 12px);
+  font-size: clamp(10px, 3vw, 13px);
   color: rgba(255, 255, 255, 0.8);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   margin-top: 3px;
 }
 
 .countdown-done {
-  margin-top: 14px;
-  font-size: clamp(16px, 4.5vw, 20px);
+  margin-top: 16px;
+  font-size: clamp(17px, 4.8vw, 22px);
   font-weight: 700;
   color: #fff;
   background: rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 999px;
-  padding: 8px 22px;
+  padding: 10px 24px;
   display: inline-block;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
@@ -717,26 +786,26 @@ button {
 ================================================== */
 
 .s2-title {
-  font-size: clamp(18px, 5vw, 23px);
+  font-size: clamp(19px, 5.2vw, 25px);
   color: #fff;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .address-text {
-  font-size: clamp(13px, 3.8vw, 18px);
+  font-size: clamp(14px, 4vw, 19px);
   color: #fff;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   line-height: 1.8;
-  margin-top: 7px;
+  margin-top: 8px;
 }
 
 .map-wrap {
   position: relative;
-  width: 200px;
-  height: 150px;
+  width: 220px;
+  height: 160px;
   max-width: 100%;
-  margin: 20px auto;
+  margin: 22px auto;
   flex: none;
   overflow: hidden;
   border-radius: 12px;
@@ -775,8 +844,8 @@ button {
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 999px;
-  padding: 4px 9px;
-  font-size: clamp(11px, 3.3vw, 15px);
+  padding: 5px 12px;
+  font-size: clamp(12px, 3.5vw, 16px);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
@@ -789,13 +858,13 @@ button {
 .qr-row {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 12px;
   padding-bottom: 15px;
 }
 
 .qr-box {
-  width: 64px;
-  height: 64px;
+  width: 68px;
+  height: 68px;
   padding: 4px;
   border-radius: 9px;
   background: rgba(255, 255, 255, 0.9);
@@ -820,7 +889,7 @@ button {
   z-index: 10;
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 8px;
 }
 
 .dot {
@@ -944,7 +1013,7 @@ button {
 .message-card {
   width: 100%;
   max-width: 360px;
-  padding: 18px 14px;
+  padding: 20px 16px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   background: rgba(0, 0, 0, 0.3);
@@ -955,14 +1024,14 @@ button {
 }
 
 .message-card h2 {
-  margin: 0 0 5px;
+  margin: 0 0 6px;
   color: #fff;
-  font-size: clamp(20px, 5vw, 23px);
+  font-size: clamp(22px, 5.5vw, 26px);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .message-card p {
-  margin: 0 0 14px;
+  margin: 0 0 16px;
   color: rgba(255, 255, 255, 0.8);
   font-size: clamp(13px, 3.2vw, 14px);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
@@ -978,7 +1047,7 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.9);
-  padding: 10px 12px;
+  padding: 12px 14px;
   margin: 6px 0;
   font-family: "B Nazanin", "BNazanin", "Vazir", "Amiri", serif;
   font-size: clamp(14px, 3.6vw, 16px);
@@ -989,7 +1058,7 @@ button {
 }
 
 .message-input {
-  min-height: 90px;
+  min-height: 100px;
 }
 
 .message-input:focus,
@@ -1039,12 +1108,12 @@ button {
 .messages-list {
   width: 100%;
   max-width: 360px;
-  margin-top: 4px;
+  margin-top: 6px;
   display: flex;
   flex-direction: column;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 16px;
-  padding: 4px 14px;
+  padding: 6px 14px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
@@ -1056,7 +1125,7 @@ button {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  padding: 12px 0;
+  padding: 14px 0;
   border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
   text-align: right;
 }
@@ -1067,7 +1136,7 @@ button {
 
 .guest-message.empty {
   justify-content: center;
-  padding: 16px 0;
+  padding: 18px 0;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -1113,7 +1182,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: clamp(11px, 2.8vw, 0.72rem);
+  font-size: clamp(11px, 2.8vw, 0.75rem);
   color: #fff;
   margin: 10px 0 8px;
   letter-spacing: 0.3px;
@@ -1121,7 +1190,7 @@ button {
   background: rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 999px;
-  padding: 5px 14px;
+  padding: 6px 16px;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
@@ -1153,7 +1222,7 @@ button {
 }
 
 .message-page-btn {
-  padding: 3px 9px;
+  padding: 4px 10px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.1);
@@ -1162,8 +1231,8 @@ button {
   cursor: pointer;
   transition: all 0.15s ease;
   font-family: inherit;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 34px;
+  min-height: 34px;
   touch-action: manipulation;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
@@ -1209,9 +1278,9 @@ button {
   width: 100%;
   border: 0;
   border-radius: 999px;
-  padding: 10px 15px;
-  margin-top: 7px;
-  font-size: clamp(14px, 3.6vw, 15px);
+  padding: 12px 15px;
+  margin-top: 8px;
+  font-size: clamp(14px, 3.6vw, 16px);
   cursor: pointer;
   background: var(--rose);
   color: var(--cream);
@@ -1242,8 +1311,8 @@ button {
 ================================================== */
 
 .signature {
-  margin-top: 16px;
-  font-size: clamp(10px, 2.6vw, 11px);
+  margin-top: 20px;
+  font-size: clamp(11px, 2.8vw, 12px);
   letter-spacing: 0.3px;
   color: rgba(255, 255, 255, 0.85);
   text-align: center;
@@ -1621,6 +1690,20 @@ button {
     padding-left: 16px;
     padding-right: 16px;
   }
+  .slide-1 .content {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .slide-2 .content {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 30px;
+  }
+  .slide-3 .content {
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-top: 30px;
+  }
   .bismillah {
     font-size: clamp(8px, 2.5vw, 12px);
   }
@@ -1637,17 +1720,17 @@ button {
   .detail span {
     font-size: 11px;
   }
-  .slide-2 .content {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-  .slide-3 .content {
-    padding-right: 16px;
-    padding-left: 16px;
-  }
   .guest-name-display {
     font-size: clamp(22px, 6vw, 32px);
     padding: 15px 20px;
+  }
+  .slide-guest .poem {
+    font-size: clamp(14px, 3.8vw, 18px);
+    padding: 10px 15px;
+  }
+  .map-wrap {
+    width: 180px;
+    height: 130px;
   }
 }
 
@@ -1664,7 +1747,19 @@ button {
     padding-bottom: 48px;
   }
   .slide-1 .content {
-    padding-top: 46px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .slide-2 .content {
+    padding-top: 35px;
+    padding-bottom: 80px;
+  }
+  .slide-3 .content {
+    padding-top: 30px;
+    padding-bottom: 70px;
+  }
+  .slide-guest .content {
+    padding: 30px 20px;
   }
   .bismillah {
     font-size: clamp(8px, 2.5vw, 11px);
@@ -1672,26 +1767,74 @@ button {
     margin-bottom: 4px;
   }
   .names {
-    font-size: 20px;
+    font-size: clamp(18px, 5vw, 22px);
   }
   .invite-text {
-    font-size: 13px;
+    font-size: clamp(12px, 3vw, 14px);
     line-height: 1.7;
-    margin: 5px 0 8px;
+    margin: 8px 0 10px;
   }
   .poem {
     font-size: 16px;
     line-height: 1.9;
   }
   .details {
-    margin-top: 8px;
+    margin-top: 10px;
+    gap: 4px;
   }
-  .slide-2 .content {
-    padding-top: 28px;
+  .detail {
+    padding: 5px 2px;
+  }
+  .detail b,
+  .detail span {
+    font-size: 12px;
   }
   .guest-name-display {
     font-size: clamp(24px, 5vw, 36px);
     padding: 12px 18px;
+    margin: 10px 0;
+  }
+  .slide-guest .poem {
+    font-size: clamp(14px, 3.5vw, 18px);
+    padding: 10px 15px;
+    margin: 8px 0;
+  }
+  .slide-guest .scroll-hint {
+    margin: 15px auto 0;
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+  .map-wrap {
+    width: 180px;
+    height: 130px;
+    margin: 15px auto;
+  }
+  .count {
+    gap: 4px;
+    margin-top: 10px;
+  }
+  .t {
+    min-width: 32px;
+  }
+  .t strong {
+    font-size: 18px;
+  }
+  .t small {
+    font-size: 9px;
+  }
+  .message-card {
+    padding: 16px 14px;
+  }
+  .message-input {
+    min-height: 80px;
+    padding: 10px 12px;
+  }
+  .messages-list {
+    padding: 4px 10px;
+  }
+  .guest-message {
+    padding: 10px 0;
+    gap: 8px;
   }
 }
 
@@ -1705,27 +1848,161 @@ button {
   }
   .slide-1 .content {
     padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .slide-2 .content {
+    padding-top: 20px;
+    padding-bottom: 55px;
+  }
+  .slide-3 .content {
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+  .slide-guest .content {
+    padding: 20px 16px;
   }
   .bismillah {
     font-size: clamp(7px, 2.2vw, 10px);
     line-height: 1.7;
   }
   .names {
-    font-size: 18px;
+    font-size: 16px;
+  }
+  .invite-text {
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 5px 0 8px;
   }
   .poem {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.7;
   }
   .details {
-    margin-top: 5px;
+    margin-top: 6px;
+    gap: 3px;
   }
   .detail {
-    padding: 5px 2px;
+    padding: 4px 2px;
+  }
+  .detail b,
+  .detail span {
+    font-size: 10px;
   }
   .guest-name-display {
     font-size: clamp(18px, 4vw, 26px);
     padding: 10px 14px;
+    margin: 8px 0;
+  }
+  .slide-guest .poem {
+    font-size: clamp(12px, 3vw, 16px);
+    padding: 8px 12px;
+    margin: 5px 0;
+    line-height: 2;
+  }
+  .slide-guest .orn {
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+  .slide-guest .line {
+    margin: 8px 0;
+  }
+  .slide-guest .scroll-hint {
+    margin: 10px auto 0;
+    padding: 4px 12px;
+    font-size: 11px;
+  }
+  .map-wrap {
+    width: 150px;
+    height: 110px;
+    margin: 10px auto;
+  }
+  .map-label {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+  .count {
+    gap: 3px;
+    margin-top: 6px;
+  }
+  .t {
+    min-width: 28px;
+  }
+  .t strong {
+    font-size: 15px;
+  }
+  .t small {
+    font-size: 8px;
+    margin-top: 1px;
+  }
+  .s2-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  .address-text {
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  .message-card {
+    padding: 12px 12px;
+  }
+  .message-card h2 {
+    font-size: 18px;
+  }
+  .message-card p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .message-input {
+    min-height: 60px;
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+  .message-name {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+  .message-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  .messages-list {
+    padding: 4px 10px;
+    margin-top: 4px;
+  }
+  .guest-message {
+    padding: 8px 0;
+    gap: 6px;
+  }
+  .guest-message .avatar {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+  .guest-message .msg-name {
+    font-size: 13px;
+  }
+  .guest-message .msg-text {
+    font-size: 13px;
+  }
+  .guest-message .msg-time {
+    font-size: 9px;
+  }
+  .message-counter {
+    font-size: 11px;
+    padding: 4px 12px;
+    margin: 6px 0;
+  }
+  .message-page-btn {
+    padding: 2px 7px;
+    font-size: 11px;
+    min-width: 28px;
+    min-height: 28px;
+  }
+  .signature {
+    font-size: 10px;
+    margin-top: 12px;
   }
 }
 
