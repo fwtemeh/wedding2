@@ -338,17 +338,29 @@ button {
 
 /* ==================================================
    SLIDE 1
+   نکته: background-color حذف شد و mix-blend-mode روی
+   خودِ تصویر (به‌جای background-blend-mode) اعمال می‌شود
+   تا پس‌زمینهٔ سفید تصویر تا حد امکان با رنگ کرمِ صفحه
+   ترکیب و محو شود. برای حذف کامل و تمیز پس‌زمینهٔ سفید،
+   بهترین راه ویرایش خودِ فایل PNG (شفاف‌سازی) است.
 ================================================== */
 
 .slide-1 {
+  position: relative;
   overflow: hidden;
   background-color: #f5f0f2;
-  background-image: url("image.png");
-  background-position: center center;
-  background-size: 95% auto; /* ← 95% */
-  background-repeat: no-repeat;
-  background-blend-mode: multiply; /* حذف کادر سفید */
 }
+
+.slide-1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: url("image.png") center / 97% auto no-repeat; /* ← 97% */
+  mix-blend-mode: multiply;
+}
+
 /* ==================================================
    SLIDE 2
 ================================================== */
@@ -370,9 +382,9 @@ button {
   z-index: 0;
   pointer-events: none;
   transform: scale(-1, -1);
-  background: url("image.png") center / 95% auto no-repeat; /* ← 95% */
+  background: url("image.png") center / 97% auto no-repeat; /* ← 97% */
   opacity: 0.12;
-  background-blend-mode: multiply;
+  mix-blend-mode: multiply;
 }
 
 .slide-2::-webkit-scrollbar {
@@ -380,17 +392,23 @@ button {
 }
 
 /* ==================================================
-   SLIDE GUEST - فقط اندازه تصویر بزرگتر و حذف کادر سفید
+   SLIDE GUEST - اندازه تصویر بزرگتر و حذف کادر سفید
 ================================================== */
 
 .slide-guest {
+  position: relative;
   overflow: hidden;
   background-color: #f5f0f2;
-  background-image: url("invitation.png");
-  background-position: center center;
-  background-size: 95% auto; /* ← 95% */
-  background-repeat: no-repeat;
-  background-blend-mode: multiply; /* حذف کادر سفید */
+}
+
+.slide-guest::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: url("invitation.png") center / 97% auto no-repeat; /* ← 97% */
+  mix-blend-mode: multiply;
 }
 
 .slide-guest .content {
@@ -398,6 +416,7 @@ button {
   align-items: center;
   padding: 20px;
   position: relative;
+  z-index: 2;
 }
 
 .guest-name-display {
@@ -472,11 +491,20 @@ button {
 ================================================== */
 
 .slide-3 {
+  position: relative;
   overflow-y: auto;
+  background: var(--blush);
+}
+
+.slide-3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
   background:
-    linear-gradient(rgba(46, 36, 40, 0.35),
-      rgba(46, 36, 40, 0.5)),
-    url("image.png") center / 95% auto no-repeat; /* ← 95% */
+    linear-gradient(rgba(46, 36, 40, 0.35), rgba(46, 36, 40, 0.5)),
+    url("image.png") center / 97% auto no-repeat; /* ← 97% */
   background-blend-mode: multiply;
 }
 
@@ -1744,12 +1772,24 @@ button {
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background: linear-gradient(rgba(46, 36, 40, 0.45), rgba(46, 36, 40, 0.55)),
-    url("invitation.png") center / 95% auto no-repeat; /* ← 95% */
+  background: var(--blush);
+}
+
+#expiredOverlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(46, 36, 40, 0.45), rgba(46, 36, 40, 0.55)),
+    url("invitation.png") center / 97% auto no-repeat; /* ← 97% */
   background-blend-mode: multiply;
 }
 
 #expiredOverlay .expired-card {
+  position: relative;
+  z-index: 1;
   width: min(100%, 340px);
   text-align: center;
   padding: 36px 28px;
