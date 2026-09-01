@@ -1,3 +1,4 @@
+```css
 :root {
   --rose: #6b4f5a;
   --rose-deep: #4a3540;
@@ -370,7 +371,7 @@ button {
 }
 
 /* ==================================================
-   SLIDE 1 - image.png با 97%
+   SLIDE 1 (اسلاید دوم در HTML) - image.png با 97%
 ================================================== */
 
 .slide-1 {
@@ -389,7 +390,7 @@ button {
 }
 
 /* ==================================================
-   SLIDE 2 - شفاف
+   SLIDE 2 (اسلاید سوم در HTML) - شفاف
 ================================================== */
 
 .slide-2 {
@@ -407,7 +408,7 @@ button {
 }
 
 /* ==================================================
-   SLIDE 3 - image.png با 97%
+   SLIDE 3 (اسلاید چهارم در HTML) - image.png با 97%
 ================================================== */
 
 .slide-3 {
@@ -447,8 +448,8 @@ button {
 
 .slide-1 .content {
   justify-content: flex-start;
-  padding-top: 70px;
-  padding-bottom: 70px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .slide-2 .content {
@@ -457,7 +458,7 @@ button {
   width: 100%;
   height: auto;
   min-height: 100%;
-  padding: 50px 20px 100px;
+  padding: 40px 20px 80px;
   justify-content: flex-start;
   overflow: visible;
 }
@@ -474,7 +475,7 @@ button {
   height: auto;
   min-height: 100%;
   justify-content: flex-start;
-  padding: 50px 20px 80px;
+  padding: 30px 20px 80px;
   overflow: visible;
   align-items: flex-start;
   padding-right: 28px;
@@ -516,7 +517,7 @@ button {
 }
 
 /* ==================================================
-   شعر اسلاید گوست
+   شعر اسلاید گوست - بدون باکس
 ================================================== */
 
 .slide-guest .poem {
@@ -547,7 +548,7 @@ button {
 }
 
 /* ==================================================
-   SCROLL HINT
+   SCROLL HINT - وسط و پایین
 ================================================== */
 
 .slide-guest .scroll-hint {
@@ -611,7 +612,7 @@ button {
 }
 
 /* ==================================================
-   TEXT - همه مشکی با سایز 2px کمتر
+   TEXT - همه مشکی
 ================================================== */
 
 .bismillah {
@@ -677,7 +678,7 @@ button {
 }
 
 /* ==================================================
-   DETAILS
+   DETAILS - باکس‌های پایین اسلاید دوم در اول اسلاید سوم
 ================================================== */
 
 .details {
@@ -685,7 +686,8 @@ button {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 6px;
-  margin-top: 16px;
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 .detail {
@@ -1015,6 +1017,7 @@ button {
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
   align-self: flex-start;
+  margin-top: 10px;
 }
 
 .message-card h2 {
@@ -1696,7 +1699,7 @@ button {
   .slide-3 .content {
     padding-right: 16px;
     padding-left: 16px;
-    padding-top: 30px;
+    padding-top: 20px;
   }
   .bismillah {
     font-size: clamp(7px, 2.3vw, 10px);
@@ -1745,11 +1748,11 @@ button {
   }
   .slide-2 .content {
     padding-top: 35px;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
   }
   .slide-3 .content {
-    padding-top: 30px;
-    padding-bottom: 70px;
+    padding-top: 20px;
+    padding-bottom: 60px;
   }
   .slide-guest .content {
     padding: 30px 20px;
@@ -1772,7 +1775,7 @@ button {
     line-height: 1.9;
   }
   .details {
-    margin-top: 10px;
+    margin-top: 8px;
     gap: 4px;
   }
   .detail {
@@ -1815,10 +1818,10 @@ button {
     font-size: 8px;
   }
   .message-card {
-    padding: 16px 14px;
+    padding: 14px 12px;
   }
   .message-input {
-    min-height: 80px;
+    min-height: 70px;
     padding: 10px 12px;
   }
   .messages-list {
@@ -1844,11 +1847,11 @@ button {
   }
   .slide-2 .content {
     padding-top: 20px;
-    padding-bottom: 55px;
+    padding-bottom: 50px;
   }
   .slide-3 .content {
-    padding-top: 20px;
-    padding-bottom: 50px;
+    padding-top: 15px;
+    padding-bottom: 45px;
   }
   .slide-guest .content {
     padding: 20px 16px;
@@ -1887,7 +1890,6 @@ button {
   }
   .slide-guest .poem {
     font-size: clamp(10px, 2.8vw, 14px);
-    padding: 8px 12px;
     margin: 5px 0;
     line-height: 2;
   }
@@ -1935,42 +1937,42 @@ button {
     margin-top: 4px;
   }
   .message-card {
-    padding: 12px 12px;
+    padding: 10px 10px;
   }
   .message-card h2 {
     font-size: 16px;
   }
   .message-card p {
     font-size: 11px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
   .message-input {
-    min-height: 60px;
-    padding: 8px 10px;
+    min-height: 50px;
+    padding: 6px 8px;
     font-size: 12px;
   }
   .message-name {
-    padding: 8px 10px;
+    padding: 6px 8px;
     font-size: 12px;
   }
   .message-btn {
-    padding: 8px 12px;
+    padding: 6px 10px;
     font-size: 12px;
-    margin-top: 5px;
+    margin-top: 4px;
   }
   .messages-list {
-    padding: 4px 10px;
+    padding: 4px 8px;
     margin-top: 4px;
   }
   .guest-message {
-    padding: 8px 0;
+    padding: 6px 0;
     gap: 6px;
   }
   .guest-message .avatar {
-    flex: 0 0 28px;
-    width: 28px;
-    height: 28px;
-    font-size: 11px;
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
   }
   .guest-message .msg-name {
     font-size: 12px;
@@ -1979,22 +1981,22 @@ button {
     font-size: 12px;
   }
   .guest-message .msg-time {
-    font-size: 9px;
+    font-size: 8px;
   }
   .message-counter {
-    font-size: 10px;
-    padding: 4px 12px;
-    margin: 6px 0;
+    font-size: 9px;
+    padding: 4px 10px;
+    margin: 4px 0;
   }
   .message-page-btn {
-    padding: 2px 7px;
-    font-size: 10px;
-    min-width: 28px;
-    min-height: 28px;
+    padding: 2px 6px;
+    font-size: 9px;
+    min-width: 24px;
+    min-height: 24px;
   }
   .signature {
-    font-size: 9px;
-    margin-top: 12px;
+    font-size: 8px;
+    margin-top: 10px;
   }
 }
 
@@ -2056,3 +2058,4 @@ button {
   font-size: clamp(13px, 3.2vw, 15px);
   opacity: 0.85;
 }
+```
