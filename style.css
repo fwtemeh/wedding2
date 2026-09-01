@@ -338,19 +338,28 @@ button {
 
 /* ==================================================
    SLIDE 1
-   از image.png (فایل PNG با پس‌زمینهٔ شفاف) استفاده می‌شود.
-   background-size: cover تضمین می‌کند هیچ فضای خالی/سفیدی
-   دور تصویر باقی نماند؛ کل کادر همیشه با تصویر پر می‌شود.
+   سه لایه:
+   ۱) لایهٔ زیرین: poster-blurred.jpg (بک‌گراند اصلی، cover)
+   ۲) لایهٔ سفید/کِرِم‌رنگ حذف شد — دیگر background-color ندارد
+   ۳) لایهٔ رویی: image.png (PNG شفاف) با ::before روی لایهٔ اول
+      قرار می‌گیرد؛ چون خودش background-color ندارد، هر جای
+      تصویر که شفاف است، مستقیماً لایهٔ زیرین (poster-blurred)
+      از پشتش دیده می‌شود، نه سفیدی.
 ================================================== */
 
 .slide-1 {
   position: relative;
   overflow: hidden;
-  background-color: #f5f0f2;
-  background-image: url("image.png");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: url("poster-blurred.jpg") center / cover no-repeat;
+}
+
+.slide-1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: url("image.png") center / contain no-repeat;
 }
 
 /* ==================================================
@@ -373,7 +382,7 @@ button {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: url("image.png") center / cover no-repeat;
+  background: url("poster-blurred.jpg") center / cover no-repeat;
   opacity: 0.18;
 }
 
@@ -382,17 +391,24 @@ button {
 }
 
 /* ==================================================
-   SLIDE GUEST - اندازه تصویر بزرگتر و حذف کادر سفید
+   SLIDE GUEST - سه لایه (مثل SLIDE 1): بک‌گراندِ زیرین
+   poster-blurred.jpg، بدون لایهٔ سفید/کِرِم‌رنگ، و روی آن
+   image.png شفاف به‌عنوان قاب تزئینی
 ================================================== */
 
 .slide-guest {
   position: relative;
   overflow: hidden;
-  background-color: #f5f0f2;
-  background-image: url("image.png");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: url("poster-blurred.jpg") center / cover no-repeat;
+}
+
+.slide-guest::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: url("image.png") center / contain no-repeat;
 }
 
 .slide-guest .content {
@@ -488,7 +504,7 @@ button {
   pointer-events: none;
   background:
     linear-gradient(rgba(46, 36, 40, 0.35), rgba(46, 36, 40, 0.5)),
-    url("image.png") center / cover no-repeat;
+    url("poster-blurred.jpg") center / cover no-repeat;
 }
 
 /* ==================================================
@@ -1766,7 +1782,7 @@ button {
   pointer-events: none;
   background:
     linear-gradient(rgba(46, 36, 40, 0.45), rgba(46, 36, 40, 0.55)),
-    url("image.png") center / cover no-repeat;
+    url("poster-blurred.jpg") center / cover no-repeat;
 }
 
 #expiredOverlay .expired-card {
