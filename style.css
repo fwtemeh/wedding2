@@ -113,7 +113,7 @@ button {
   color: var(--rose-deep);
   border-radius: 999px;
   padding: 12px 26px 13px;
-  font-size: clamp(13px, 3.6vw, 15px);
+  font-size: clamp(11px, 3.4vw, 13px);
   box-shadow: 0 10px 28px rgba(46, 36, 40, 0.18);
   cursor: pointer;
   white-space: nowrap;
@@ -276,7 +276,7 @@ button {
 }
 
 /* ==================================================
-   FRAME - کشیده‌تر و ریسپانسیو
+   FRAME
 ================================================== */
 
 .frame {
@@ -407,7 +407,7 @@ button {
 }
 
 /* ==================================================
-   SLIDE 3 - image.png با 97% (مثل اسلاید 1 و گوست)
+   SLIDE 3 - image.png با 97%
 ================================================== */
 
 .slide-3 {
@@ -481,18 +481,18 @@ button {
 }
 
 /* ==================================================
-   GUEST NAME DISPLAY - مشکی
+   GUEST NAME DISPLAY
 ================================================== */
 
 .guest-name-display {
   font-family: "Amiri", "Noto Naskh Arabic", serif;
   font-weight: 700;
-  font-size: clamp(32px, 9vw, 52px);
+  font-size: clamp(30px, 8.8vw, 50px);
   color: #000;
-  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+  text-shadow: none;
   text-align: center;
   padding: 30px 40px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 16px;
@@ -516,30 +516,25 @@ button {
 }
 
 /* ==================================================
-   شعر اسلاید گوست - مشکی
+   شعر اسلاید گوست
 ================================================== */
 
 .slide-guest .poem {
-  font-size: clamp(18px, 5vw, 24px);
+  font-size: clamp(16px, 4.8vw, 22px);
   line-height: 2.5;
   color: #000;
-  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+  text-shadow: none;
   margin: 15px 0 10px;
   max-width: 85%;
   font-family: "Amiri", "Noto Naskh Arabic", serif;
   font-weight: 400;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 15px 25px;
-  border-radius: 12px;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
 }
 
 .slide-guest .orn {
-  font-size: clamp(24px, 6vw, 32px);
-  color: rgba(0, 0, 0, 0.5);
+  font-size: clamp(22px, 5.8vw, 30px);
+  color: rgba(0, 0, 0, 0.4);
   line-height: 1;
-  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+  text-shadow: none;
   margin-bottom: 5px;
 }
 
@@ -556,25 +551,25 @@ button {
 ================================================== */
 
 .slide-guest .scroll-hint {
-  position: relative;
-  bottom: auto;
-  left: auto;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
   right: auto;
-  transform: none;
-  margin: 30px auto 0;
+  transform: translateX(-50%);
+  margin: 0;
   width: max-content;
   max-width: 85%;
-  color: rgba(0, 0, 0, 0.7);
-  font-size: clamp(13px, 2.8vw, 17px);
+  color: rgba(0, 0, 0, 0.6);
+  font-size: clamp(11px, 2.6vw, 15px);
   font-family: "Amiri", "Noto Naskh Arabic", serif;
-  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+  text-shadow: none;
   animation: bounceHint 2s ease-in-out infinite;
   background: rgba(255, 255, 255, 0.15);
-  padding: 8px 20px;
+  padding: 6px 16px;
   border-radius: 20px;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   letter-spacing: 1px;
   white-space: nowrap;
   text-align: center;
@@ -582,24 +577,24 @@ button {
 
 .scroll-hint {
   position: absolute;
-  bottom: 30px;
+  bottom: 40px;
   left: 50%;
   right: auto;
   transform: translateX(-50%);
-  margin: 0 auto;
+  margin: 0;
   width: max-content;
   max-width: 85%;
-  color: rgba(0, 0, 0, 0.7);
-  font-size: clamp(12px, 2.5vw, 16px);
+  color: rgba(0, 0, 0, 0.6);
+  font-size: clamp(11px, 2.6vw, 15px);
   font-family: "Amiri", "Noto Naskh Arabic", serif;
-  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+  text-shadow: none;
   animation: bounceHint 2s ease-in-out infinite;
   background: rgba(255, 255, 255, 0.15);
   padding: 6px 16px;
   border-radius: 20px;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   letter-spacing: 1px;
   white-space: nowrap;
   text-align: center;
@@ -616,15 +611,15 @@ button {
 }
 
 /* ==================================================
-   TEXT - مشکی
+   TEXT - همه مشکی با سایز 2px کمتر
 ================================================== */
 
 .bismillah {
   font-family: "Noto Nastaliq Urdu", "Aref Ruqaa", "Noto Naskh Arabic", "Amiri", serif;
   font-weight: 700;
-  font-size: clamp(10px, 3.2vw, 16px);
+  font-size: clamp(8px, 3vw, 14px);
   color: #000;
-  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+  text-shadow: none;
   line-height: 2.2;
   margin-bottom: 8px;
   white-space: normal;
@@ -635,18 +630,18 @@ button {
 .names {
   font-family: "Amiri", serif;
   font-weight: 700;
-  font-size: clamp(22px, 7vw, 32px);
+  font-size: clamp(20px, 6.8vw, 30px);
   color: #000;
-  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+  text-shadow: none;
   line-height: 1.6;
   width: 100%;
 }
 
 .invite-text {
-  font-size: clamp(14px, 3.6vw, 18px);
+  font-size: clamp(12px, 3.4vw, 16px);
   line-height: 2;
   color: #000;
-  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+  text-shadow: none;
   margin: 12px 0 16px;
   max-width: 100%;
   white-space: normal;
@@ -655,22 +650,22 @@ button {
 }
 
 .poem {
-  font-size: clamp(16px, 4.6vw, 21px);
+  font-size: clamp(14px, 4.4vw, 19px);
   line-height: 2.15;
   color: #000;
-  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+  text-shadow: none;
   margin: 0 0 8px;
 }
 
 .orn {
-  font-size: clamp(20px, 5vw, 28px);
+  font-size: clamp(18px, 4.8vw, 26px);
   color: rgba(0, 0, 0, 0.4);
   line-height: 1;
-  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+  text-shadow: none;
 }
 
 /* ==================================================
-   LINE - مشکی
+   LINE
 ================================================== */
 
 .line {
@@ -682,7 +677,7 @@ button {
 }
 
 /* ==================================================
-   DETAILS - مشکی
+   DETAILS
 ================================================== */
 
 .details {
@@ -697,7 +692,7 @@ button {
   min-width: 0;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   padding: 8px 2px;
@@ -707,28 +702,28 @@ button {
 .detail b {
   display: block;
   color: #000;
-  font-size: clamp(13px, 3.6vw, 18px);
+  font-size: clamp(11px, 3.4vw, 16px);
   margin-bottom: 2px;
   white-space: nowrap;
-  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.2);
+  text-shadow: none;
 }
 
 .detail span {
   display: block;
   color: #000;
-  font-size: clamp(13px, 3.6vw, 18px);
+  font-size: clamp(11px, 3.4vw, 16px);
   white-space: nowrap;
-  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.2);
+  text-shadow: none;
 }
 
 /* ==================================================
-   COUNTDOWN - مشکی
+   COUNTDOWN
 ================================================== */
 
 .count-title {
-  font-size: clamp(18px, 5vw, 24px);
+  font-size: clamp(16px, 4.8vw, 22px);
   color: #000;
-  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+  text-shadow: none;
   line-height: 1.8;
 }
 
@@ -743,37 +738,37 @@ button {
 
 .t {
   text-align: center;
-  min-width: clamp(38px, 12vw, 46px);
+  min-width: clamp(36px, 11vw, 44px);
 }
 
 .t strong {
   display: block;
-  font-size: clamp(20px, 6vw, 28px);
+  font-size: clamp(18px, 5.8vw, 26px);
   font-weight: 700;
   color: #000;
-  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+  text-shadow: none;
   line-height: 1.25;
 }
 
 .t small {
   display: block;
-  font-size: clamp(10px, 3vw, 13px);
+  font-size: clamp(8px, 2.8vw, 11px);
   color: rgba(0, 0, 0, 0.6);
-  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.2);
+  text-shadow: none;
   margin-top: 3px;
 }
 
 .countdown-done {
   margin-top: 16px;
-  font-size: clamp(17px, 4.8vw, 22px);
+  font-size: clamp(15px, 4.6vw, 20px);
   font-weight: 700;
   color: #000;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 999px;
   padding: 10px 24px;
   display: inline-block;
-  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+  text-shadow: none;
 }
 
 .countdown-done[hidden] {
@@ -781,20 +776,20 @@ button {
 }
 
 /* ==================================================
-   MAP - مشکی
+   MAP
 ================================================== */
 
 .s2-title {
-  font-size: clamp(19px, 5.2vw, 25px);
+  font-size: clamp(17px, 5vw, 23px);
   color: #000;
-  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+  text-shadow: none;
   margin-bottom: 12px;
 }
 
 .address-text {
-  font-size: clamp(14px, 4vw, 19px);
+  font-size: clamp(12px, 3.8vw, 17px);
   color: #000;
-  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+  text-shadow: none;
   line-height: 1.8;
   margin-top: 8px;
 }
@@ -844,7 +839,7 @@ button {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 999px;
   padding: 5px 12px;
-  font-size: clamp(12px, 3.5vw, 16px);
+  font-size: clamp(10px, 3.3vw, 14px);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   text-shadow: none;
@@ -1006,7 +1001,7 @@ button {
 }
 
 /* ==================================================
-   MESSAGES - مشکی
+   MESSAGES
 ================================================== */
 
 .message-card {
@@ -1015,25 +1010,25 @@ button {
   padding: 20px 16px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
   align-self: flex-start;
 }
 
 .message-card h2 {
   margin: 0 0 6px;
   color: #000;
-  font-size: clamp(22px, 5.5vw, 26px);
-  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+  font-size: clamp(20px, 5.3vw, 24px);
+  text-shadow: none;
 }
 
 .message-card p {
   margin: 0 0 16px;
   color: rgba(0, 0, 0, 0.7);
-  font-size: clamp(13px, 3.2vw, 14px);
-  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.2);
+  font-size: clamp(11px, 3vw, 13px);
+  text-shadow: none;
 }
 
 /* ==================================================
@@ -1049,7 +1044,7 @@ button {
   padding: 12px 14px;
   margin: 6px 0;
   font-family: "B Nazanin", "BNazanin", "Vazir", "Amiri", serif;
-  font-size: clamp(14px, 3.6vw, 16px);
+  font-size: clamp(12px, 3.4vw, 15px);
   color: var(--ink);
   outline: none;
   resize: vertical;
@@ -1066,7 +1061,7 @@ button {
 }
 
 /* ==================================================
-   GUEST MESSAGE - مشکی
+   GUEST MESSAGE
 ================================================== */
 
 .guest-message,
@@ -1080,9 +1075,9 @@ button {
   align-items: center;
   gap: 4px;
   color: #000;
-  font-size: clamp(14px, 3.6vw, 15px);
+  font-size: clamp(12px, 3.4vw, 14px);
   font-weight: 700;
-  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.2);
+  text-shadow: none;
 }
 
 .guest-message .msg-heart {
@@ -1091,17 +1086,17 @@ button {
 }
 
 .guest-message .msg-text {
-  font-size: clamp(14px, 3.6vw, 15px);
+  font-size: clamp(12px, 3.4vw, 14px);
   color: rgba(0, 0, 0, 0.8);
   line-height: 1.7;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   margin-top: 2px;
-  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.1);
+  text-shadow: none;
 }
 
 /* ==================================================
-   MESSAGES LIST - مشکی
+   MESSAGES LIST
 ================================================== */
 
 .messages-list {
@@ -1110,7 +1105,7 @@ button {
   margin-top: 6px;
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   padding: 6px 14px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -1174,25 +1169,25 @@ button {
 }
 
 /* ==================================================
-   MESSAGE COUNTER - مشکی
+   MESSAGE COUNTER
 ================================================== */
 
 .message-counter {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: clamp(11px, 2.8vw, 0.75rem);
+  font-size: clamp(9px, 2.6vw, 0.7rem);
   color: #000;
   margin: 10px 0 8px;
   letter-spacing: 0.3px;
   align-self: flex-start;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 999px;
   padding: 6px 16px;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.2);
+  text-shadow: none;
 }
 
 .message-counter .counter-num {
@@ -1206,7 +1201,7 @@ button {
 }
 
 /* ==================================================
-   MESSAGE PAGINATION - مشکی
+   MESSAGE PAGINATION
 ================================================== */
 
 .message-pagination,
@@ -1226,14 +1221,14 @@ button {
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.15);
   color: #000;
-  font-size: clamp(11px, 2.8vw, 12px);
+  font-size: clamp(9px, 2.6vw, 11px);
   cursor: pointer;
   transition: all 0.15s ease;
   font-family: inherit;
   min-width: 34px;
   min-height: 34px;
   touch-action: manipulation;
-  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.2);
+  text-shadow: none;
 }
 
 .message-page-btn.active {
@@ -1279,7 +1274,7 @@ button {
   border-radius: 999px;
   padding: 12px 15px;
   margin-top: 8px;
-  font-size: clamp(14px, 3.6vw, 16px);
+  font-size: clamp(12px, 3.4vw, 14px);
   cursor: pointer;
   background: var(--rose);
   color: var(--cream);
@@ -1306,18 +1301,18 @@ button {
 }
 
 /* ==================================================
-   SIGNATURE - مشکی
+   SIGNATURE
 ================================================== */
 
 .signature {
   margin-top: 20px;
-  font-size: clamp(11px, 2.8vw, 12px);
+  font-size: clamp(9px, 2.6vw, 10px);
   letter-spacing: 0.3px;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.5);
   text-align: center;
   align-self: flex-start;
   width: 100%;
-  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.2);
+  text-shadow: none;
 }
 
 .signature a {
@@ -1390,7 +1385,7 @@ button {
 .toast .toast-text {
   flex: 1;
   min-width: 0;
-  font-size: clamp(13px, 3.6vw, 15px);
+  font-size: clamp(11px, 3.4vw, 14px);
   line-height: 1.6;
   color: #000;
   text-align: right;
@@ -1704,28 +1699,27 @@ button {
     padding-top: 30px;
   }
   .bismillah {
-    font-size: clamp(8px, 2.5vw, 12px);
+    font-size: clamp(7px, 2.3vw, 10px);
   }
   .names {
-    font-size: clamp(13px, 4.2vw, 17px);
+    font-size: clamp(11px, 4vw, 15px);
   }
   .invite-text {
-    font-size: 14.5px;
+    font-size: 12.5px;
   }
   .poem {
-    font-size: 13.5px;
+    font-size: 11.5px;
   }
   .detail b,
   .detail span {
-    font-size: 11px;
+    font-size: 10px;
   }
   .guest-name-display {
-    font-size: clamp(22px, 6vw, 32px);
+    font-size: clamp(20px, 5.8vw, 30px);
     padding: 15px 20px;
   }
   .slide-guest .poem {
-    font-size: clamp(14px, 3.8vw, 18px);
-    padding: 10px 15px;
+    font-size: clamp(12px, 3.6vw, 16px);
   }
   .map-wrap {
     width: 180px;
@@ -1761,20 +1755,20 @@ button {
     padding: 30px 20px;
   }
   .bismillah {
-    font-size: clamp(8px, 2.5vw, 11px);
+    font-size: clamp(7px, 2.3vw, 10px);
     line-height: 1.9;
     margin-bottom: 4px;
   }
   .names {
-    font-size: clamp(18px, 5vw, 22px);
+    font-size: clamp(16px, 4.8vw, 20px);
   }
   .invite-text {
-    font-size: clamp(12px, 3vw, 14px);
+    font-size: clamp(10px, 2.8vw, 12px);
     line-height: 1.7;
     margin: 8px 0 10px;
   }
   .poem {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.9;
   }
   .details {
@@ -1786,22 +1780,21 @@ button {
   }
   .detail b,
   .detail span {
-    font-size: 12px;
+    font-size: 11px;
   }
   .guest-name-display {
-    font-size: clamp(24px, 5vw, 36px);
+    font-size: clamp(22px, 4.8vw, 34px);
     padding: 12px 18px;
     margin: 10px 0;
   }
   .slide-guest .poem {
-    font-size: clamp(14px, 3.5vw, 18px);
-    padding: 10px 15px;
+    font-size: clamp(12px, 3.3vw, 16px);
     margin: 8px 0;
   }
   .slide-guest .scroll-hint {
-    margin: 15px auto 0;
+    bottom: 30px;
     padding: 6px 14px;
-    font-size: 12px;
+    font-size: 11px;
   }
   .map-wrap {
     width: 180px;
@@ -1816,10 +1809,10 @@ button {
     min-width: 32px;
   }
   .t strong {
-    font-size: 18px;
+    font-size: 16px;
   }
   .t small {
-    font-size: 9px;
+    font-size: 8px;
   }
   .message-card {
     padding: 16px 14px;
@@ -1861,19 +1854,19 @@ button {
     padding: 20px 16px;
   }
   .bismillah {
-    font-size: clamp(7px, 2.2vw, 10px);
+    font-size: clamp(6px, 2vw, 9px);
     line-height: 1.7;
   }
   .names {
-    font-size: 16px;
+    font-size: 14px;
   }
   .invite-text {
-    font-size: 12px;
+    font-size: 10px;
     line-height: 1.6;
     margin: 5px 0 8px;
   }
   .poem {
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1.7;
   }
   .details {
@@ -1885,30 +1878,30 @@ button {
   }
   .detail b,
   .detail span {
-    font-size: 10px;
+    font-size: 9px;
   }
   .guest-name-display {
-    font-size: clamp(18px, 4vw, 26px);
+    font-size: clamp(16px, 3.8vw, 24px);
     padding: 10px 14px;
     margin: 8px 0;
   }
   .slide-guest .poem {
-    font-size: clamp(12px, 3vw, 16px);
+    font-size: clamp(10px, 2.8vw, 14px);
     padding: 8px 12px;
     margin: 5px 0;
     line-height: 2;
   }
   .slide-guest .orn {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 2px;
   }
   .slide-guest .line {
     margin: 8px 0;
   }
   .slide-guest .scroll-hint {
-    margin: 10px auto 0;
+    bottom: 20px;
     padding: 4px 12px;
-    font-size: 11px;
+    font-size: 10px;
   }
   .map-wrap {
     width: 150px;
@@ -1916,7 +1909,7 @@ button {
     margin: 10px auto;
   }
   .map-label {
-    font-size: 10px;
+    font-size: 9px;
     padding: 3px 8px;
   }
   .count {
@@ -1927,42 +1920,42 @@ button {
     min-width: 28px;
   }
   .t strong {
-    font-size: 15px;
+    font-size: 13px;
   }
   .t small {
-    font-size: 8px;
+    font-size: 7px;
     margin-top: 1px;
   }
   .s2-title {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 5px;
   }
   .address-text {
-    font-size: 12px;
+    font-size: 11px;
     margin-top: 4px;
   }
   .message-card {
     padding: 12px 12px;
   }
   .message-card h2 {
-    font-size: 18px;
+    font-size: 16px;
   }
   .message-card p {
-    font-size: 12px;
+    font-size: 11px;
     margin-bottom: 10px;
   }
   .message-input {
     min-height: 60px;
     padding: 8px 10px;
-    font-size: 14px;
+    font-size: 12px;
   }
   .message-name {
     padding: 8px 10px;
-    font-size: 14px;
+    font-size: 12px;
   }
   .message-btn {
     padding: 8px 12px;
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 5px;
   }
   .messages-list {
@@ -1980,27 +1973,27 @@ button {
     font-size: 11px;
   }
   .guest-message .msg-name {
-    font-size: 13px;
+    font-size: 12px;
   }
   .guest-message .msg-text {
-    font-size: 13px;
+    font-size: 12px;
   }
   .guest-message .msg-time {
     font-size: 9px;
   }
   .message-counter {
-    font-size: 11px;
+    font-size: 10px;
     padding: 4px 12px;
     margin: 6px 0;
   }
   .message-page-btn {
     padding: 2px 7px;
-    font-size: 11px;
+    font-size: 10px;
     min-width: 28px;
     min-height: 28px;
   }
   .signature {
-    font-size: 10px;
+    font-size: 9px;
     margin-top: 12px;
   }
 }
