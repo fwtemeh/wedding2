@@ -345,11 +345,10 @@ button {
   background-color: #f5f0f2;
   background-image: url("image.png");
   background-position: center center;
-  background-size: 75% auto;
+  background-size: 95% auto; /* ← 95% */
   background-repeat: no-repeat;
-  background-blend-mode: multiply;
+  background-blend-mode: multiply; /* حذف کادر سفید */
 }
-
 /* ==================================================
    SLIDE 2
 ================================================== */
@@ -371,7 +370,7 @@ button {
   z-index: 0;
   pointer-events: none;
   transform: scale(-1, -1);
-  background: url("image.png") center / 65% auto no-repeat;
+  background: url("image.png") center / 95% auto no-repeat; /* ← 95% */
   opacity: 0.12;
   background-blend-mode: multiply;
 }
@@ -389,9 +388,9 @@ button {
   background-color: #f5f0f2;
   background-image: url("invitation.png");
   background-position: center center;
-  background-size: 92% auto;
+  background-size: 95% auto; /* ← 95% */
   background-repeat: no-repeat;
-  background-blend-mode: multiply;
+  background-blend-mode: multiply; /* حذف کادر سفید */
 }
 
 .slide-guest .content {
@@ -477,7 +476,7 @@ button {
   background:
     linear-gradient(rgba(46, 36, 40, 0.35),
       rgba(46, 36, 40, 0.5)),
-    url("image.png") center / 70% auto no-repeat;
+    url("image.png") center / 95% auto no-repeat; /* ← 95% */
   background-blend-mode: multiply;
 }
 
@@ -1746,7 +1745,7 @@ button {
   justify-content: center;
   padding: 24px;
   background: linear-gradient(rgba(46, 36, 40, 0.45), rgba(46, 36, 40, 0.55)),
-    url("invitation.png") center / 70% auto no-repeat;
+    url("invitation.png") center / 95% auto no-repeat; /* ← 95% */
   background-blend-mode: multiply;
 }
 
