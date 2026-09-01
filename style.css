@@ -338,27 +338,18 @@ button {
 
 /* ==================================================
    SLIDE 1
-   نکته: background-color حذف شد و mix-blend-mode روی
-   خودِ تصویر (به‌جای background-blend-mode) اعمال می‌شود
-   تا پس‌زمینهٔ سفید تصویر تا حد امکان با رنگ کرمِ صفحه
-   ترکیب و محو شود. برای حذف کامل و تمیز پس‌زمینهٔ سفید،
-   بهترین راه ویرایش خودِ فایل PNG (شفاف‌سازی) است.
+   بک‌گراند از poster.jpg (نسخهٔ تار‌شده) استفاده می‌کند
+   تا هیچ حاشیهٔ سفیدی دیده نشود و کل صفحه را با cover پر کند.
 ================================================== */
 
 .slide-1 {
   position: relative;
   overflow: hidden;
   background-color: #f5f0f2;
-}
-
-.slide-1::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: url("image.png") center / 97% auto no-repeat; /* ← 97% */
-  mix-blend-mode: multiply;
+  background-image: url("poster-blurred.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* ==================================================
@@ -381,10 +372,8 @@ button {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  transform: scale(-1, -1);
-  background: url("image.png") center / 97% auto no-repeat; /* ← 97% */
-  opacity: 0.12;
-  mix-blend-mode: multiply;
+  background: url("poster-blurred.jpg") center / cover no-repeat;
+  opacity: 0.18;
 }
 
 .slide-2::-webkit-scrollbar {
@@ -399,16 +388,10 @@ button {
   position: relative;
   overflow: hidden;
   background-color: #f5f0f2;
-}
-
-.slide-guest::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: url("invitation.png") center / 97% auto no-repeat; /* ← 97% */
-  mix-blend-mode: multiply;
+  background-image: url("poster-blurred.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .slide-guest .content {
@@ -504,8 +487,7 @@ button {
   pointer-events: none;
   background:
     linear-gradient(rgba(46, 36, 40, 0.35), rgba(46, 36, 40, 0.5)),
-    url("image.png") center / 97% auto no-repeat; /* ← 97% */
-  background-blend-mode: multiply;
+    url("poster-blurred.jpg") center / cover no-repeat;
 }
 
 /* ==================================================
@@ -1783,8 +1765,7 @@ button {
   pointer-events: none;
   background:
     linear-gradient(rgba(46, 36, 40, 0.45), rgba(46, 36, 40, 0.55)),
-    url("invitation.png") center / 97% auto no-repeat; /* ← 97% */
-  background-blend-mode: multiply;
+    url("poster-blurred.jpg") center / cover no-repeat;
 }
 
 #expiredOverlay .expired-card {
