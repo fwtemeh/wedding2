@@ -389,7 +389,7 @@ button {
 }
 
 /* ==================================================
-   SLIDE 3 (تایمر و نقشه) - image.png با 97%
+   SLIDE 3 (تایمر) - image.png با 97%
 ================================================== */
 
 .slide-2 {
@@ -412,7 +412,40 @@ button {
 }
 
 /* ==================================================
-   SLIDE 4 (پیام‌ها) - image.png با 97%
+   SLIDE 4 (اسلاید جدید - محل برگزاری) - image.png با 97%
+================================================== */
+
+.slide-location {
+  position: relative;
+  overflow: hidden;
+  background: transparent !important;
+  min-height: 100%;
+  height: 100%;
+}
+
+.slide-location::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: url("image.png") center / 97% no-repeat;
+}
+
+.slide-location .content {
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  position: relative;
+  z-index: 2;
+  min-height: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================================================
+   SLIDE 5 (پیام‌ها) - بدون بک‌گراند (حذف شده)
 ================================================== */
 
 .slide-3 {
@@ -422,12 +455,7 @@ button {
 }
 
 .slide-3::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: url("image.png") center / 97% no-repeat;
+  display: none;
 }
 
 /* ==================================================
@@ -473,6 +501,12 @@ button {
   padding: 50px 20px;
 }
 
+.slide-location .content {
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+}
+
 .slide-3 .content {
   position: relative;
   inset: auto;
@@ -492,7 +526,7 @@ button {
 .guest-name-display {
   font-family: "Amiri", "Noto Naskh Arabic", serif;
   font-weight: 700;
-  font-size: clamp(30px, 8.8vw, 50px);
+  font-size: clamp(25px, 7.8vw, 45px);
   color: #000;
   text-shadow: none;
   text-align: center;
@@ -525,7 +559,7 @@ button {
 ================================================== */
 
 .slide-guest .poem {
-  font-size: clamp(16px, 4.8vw, 22px);
+  font-size: clamp(11px, 3.8vw, 17px);
   line-height: 2.5;
   color: #000;
   text-shadow: none;
@@ -542,7 +576,7 @@ button {
 }
 
 .slide-guest .orn {
-  font-size: clamp(22px, 5.8vw, 30px);
+  font-size: clamp(17px, 4.8vw, 25px);
   color: rgba(0, 0, 0, 0.4);
   line-height: 1;
   text-shadow: none;
@@ -611,6 +645,11 @@ button {
   text-align: center;
 }
 
+/* راهنمای اسکرول پایین اسلاید دوم - "تاریخ برگزاری مراسم" */
+.slide-1 .scroll-hint {
+  content: "↓ تاریخ برگزاری مراسم ↓";
+}
+
 @keyframes bounceHint {
   0%,
   100% {
@@ -622,13 +661,14 @@ button {
 }
 
 /* ==================================================
-   TEXT - همه مشکی
+   TEXT - همه مشکی با 5px کاهش (اسلاید اول و دوم)
 ================================================== */
 
-.bismillah {
+.slide-guest .bismillah,
+.slide-1 .bismillah {
   font-family: "Noto Nastaliq Urdu", "Aref Ruqaa", "Noto Naskh Arabic", "Amiri", serif;
   font-weight: 700;
-  font-size: clamp(8px, 3vw, 14px);
+  font-size: clamp(3px, 2.2vw, 9px);
   color: #000;
   text-shadow: none;
   line-height: 2.2;
@@ -638,18 +678,20 @@ button {
   text-align: center;
 }
 
-.names {
+.slide-guest .names,
+.slide-1 .names {
   font-family: "Amiri", serif;
   font-weight: 700;
-  font-size: clamp(20px, 6.8vw, 30px);
+  font-size: clamp(15px, 5.8vw, 25px);
   color: #000;
   text-shadow: none;
   line-height: 1.6;
   width: 100%;
 }
 
-.invite-text {
-  font-size: clamp(12px, 3.4vw, 16px);
+.slide-guest .invite-text,
+.slide-1 .invite-text {
+  font-size: clamp(7px, 2.6vw, 11px);
   line-height: 2;
   color: #000;
   text-shadow: none;
@@ -660,16 +702,18 @@ button {
   text-align: center;
 }
 
-.poem {
-  font-size: clamp(14px, 4.4vw, 19px);
+.slide-guest .poem,
+.slide-1 .poem {
+  font-size: clamp(9px, 3.4vw, 14px);
   line-height: 2.15;
   color: #000;
   text-shadow: none;
   margin: 0 0 8px;
 }
 
-.orn {
-  font-size: clamp(18px, 4.8vw, 26px);
+.slide-guest .orn,
+.slide-1 .orn {
+  font-size: clamp(13px, 3.8vw, 21px);
   color: rgba(0, 0, 0, 0.4);
   line-height: 1;
   text-shadow: none;
@@ -688,14 +732,14 @@ button {
 }
 
 /* ==================================================
-   DETAILS - باکس‌های پایین اسلاید دوم در اول اسلاید سوم
+   DETAILS - باکس‌های تاریخ در اسلاید سوم (کوچک‌تر 20%)
 ================================================== */
 
 .details {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 6px;
+  gap: 5px;
   margin-top: 5px;
   margin-bottom: 15px;
 }
@@ -703,19 +747,19 @@ button {
 .detail {
   min-width: 0;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
+  border-radius: 6px;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  padding: 8px 2px;
+  padding: 5px 2px;
   overflow: hidden;
 }
 
 .detail b {
   display: block;
   color: #000;
-  font-size: clamp(11px, 3.4vw, 16px);
-  margin-bottom: 2px;
+  font-size: clamp(8px, 2.6vw, 12px);
+  margin-bottom: 1px;
   white-space: nowrap;
   text-shadow: none;
 }
@@ -723,9 +767,107 @@ button {
 .detail span {
   display: block;
   color: #000;
-  font-size: clamp(11px, 3.4vw, 16px);
+  font-size: clamp(8px, 2.6vw, 12px);
   white-space: nowrap;
   text-shadow: none;
+}
+
+/* ==================================================
+   LOCATION SLIDE (اسلاید جدید - محل برگزاری)
+================================================== */
+
+.location-title {
+  font-size: clamp(20px, 6vw, 32px);
+  color: #000;
+  text-shadow: none;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.location-address {
+  font-size: clamp(14px, 4vw, 20px);
+  color: #000;
+  text-shadow: none;
+  line-height: 2;
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 90%;
+}
+
+.location-map-wrap {
+  position: relative;
+  width: 240px;
+  height: 180px;
+  max-width: 90%;
+  margin: 10px auto;
+  flex: none;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+  touch-action: manipulation;
+}
+
+.location-map-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: none;
+}
+
+.location-map-tint {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.05),
+      rgba(0, 0, 0, 0.05));
+}
+
+.location-map-label {
+  position: absolute;
+  left: 50%;
+  bottom: 7px;
+  transform: translateX(-50%);
+  max-width: 90%;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: clamp(10px, 3vw, 13px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-shadow: none;
+}
+
+.location-scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  margin: 0;
+  width: max-content;
+  max-width: 85%;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: clamp(11px, 2.6vw, 15px);
+  font-family: "Amiri", "Noto Naskh Arabic", serif;
+  text-shadow: none;
+  animation: bounceHint 2s ease-in-out infinite;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  letter-spacing: 1px;
+  white-space: nowrap;
+  text-align: center;
 }
 
 /* ==================================================
@@ -788,73 +930,27 @@ button {
 }
 
 /* ==================================================
-   MAP
+   MAP (اسلاید قدیمی - حذف شده)
 ================================================== */
 
 .s2-title {
-  font-size: clamp(17px, 5vw, 23px);
-  color: #000;
-  text-shadow: none;
-  margin-bottom: 12px;
+  display: none;
 }
 
 .address-text {
-  font-size: clamp(12px, 3.8vw, 17px);
-  color: #000;
-  text-shadow: none;
-  line-height: 1.8;
-  margin-top: 8px;
+  display: none;
 }
 
 .map-wrap {
-  position: relative;
-  width: 220px;
-  height: 160px;
-  max-width: 100%;
-  margin: 22px auto;
-  flex: none;
-  overflow: hidden;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.2);
-  touch-action: manipulation;
-}
-
-.map-wrap iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  pointer-events: none;
+  display: none;
 }
 
 .map-tint {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(to bottom,
-      rgba(255, 255, 255, 0.05),
-      rgba(0, 0, 0, 0.05));
+  display: none;
 }
 
 .map-label {
-  position: absolute;
-  left: 50%;
-  bottom: 7px;
-  transform: translateX(-50%);
-  max-width: 90%;
-  white-space: nowrap;
-  background: rgba(255, 255, 255, 0.8);
-  color: #000;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 999px;
-  padding: 5px 12px;
-  font-size: clamp(10px, 3.3vw, 14px);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  text-shadow: none;
+  display: none;
 }
 
 /* ==================================================
@@ -1711,32 +1807,41 @@ button {
     padding-left: 16px;
     padding-top: 20px;
   }
+  .slide-location .content {
+    padding: 30px 16px;
+  }
   .bismillah {
-    font-size: clamp(7px, 2.3vw, 10px);
+    font-size: clamp(3px, 1.8vw, 7px);
   }
   .names {
     font-size: clamp(11px, 4vw, 15px);
   }
   .invite-text {
-    font-size: 12.5px;
+    font-size: 9px;
   }
   .poem {
-    font-size: 11.5px;
+    font-size: 8px;
   }
   .detail b,
   .detail span {
-    font-size: 10px;
+    font-size: 8px;
   }
   .guest-name-display {
     font-size: clamp(20px, 5.8vw, 30px);
     padding: 0;
   }
   .slide-guest .poem {
-    font-size: clamp(12px, 3.6vw, 16px);
+    font-size: clamp(9px, 3vw, 13px);
   }
-  .map-wrap {
-    width: 180px;
-    height: 130px;
+  .location-map-wrap {
+    width: 200px;
+    height: 150px;
+  }
+  .location-title {
+    font-size: clamp(16px, 5vw, 24px);
+  }
+  .location-address {
+    font-size: clamp(11px, 3.5vw, 15px);
   }
 }
 
@@ -1767,21 +1872,24 @@ button {
   .slide-guest .content {
     padding: 30px 20px;
   }
+  .slide-location .content {
+    padding: 30px 20px;
+  }
   .bismillah {
-    font-size: clamp(7px, 2.3vw, 10px);
+    font-size: clamp(4px, 2vw, 8px);
     line-height: 1.9;
     margin-bottom: 4px;
   }
   .names {
-    font-size: clamp(16px, 4.8vw, 20px);
+    font-size: clamp(13px, 4.2vw, 17px);
   }
   .invite-text {
-    font-size: clamp(10px, 2.8vw, 12px);
+    font-size: clamp(7px, 2.2vw, 10px);
     line-height: 1.7;
     margin: 8px 0 10px;
   }
   .poem {
-    font-size: 14px;
+    font-size: 11px;
     line-height: 1.9;
   }
   .details {
@@ -1789,19 +1897,19 @@ button {
     gap: 4px;
   }
   .detail {
-    padding: 5px 2px;
+    padding: 4px 2px;
   }
   .detail b,
   .detail span {
-    font-size: 11px;
+    font-size: 9px;
   }
   .guest-name-display {
-    font-size: clamp(22px, 4.8vw, 34px);
+    font-size: clamp(18px, 4.2vw, 28px);
     margin: 10px 0;
     padding: 0;
   }
   .slide-guest .poem {
-    font-size: clamp(12px, 3.3vw, 16px);
+    font-size: clamp(9px, 2.8vw, 13px);
     margin: 8px 0;
   }
   .slide-guest .scroll-hint {
@@ -1809,10 +1917,18 @@ button {
     padding: 6px 14px;
     font-size: 11px;
   }
-  .map-wrap {
-    width: 180px;
-    height: 130px;
-    margin: 15px auto;
+  .location-map-wrap {
+    width: 200px;
+    height: 150px;
+    margin: 10px auto;
+  }
+  .location-title {
+    font-size: clamp(16px, 5vw, 24px);
+    margin-bottom: 10px;
+  }
+  .location-address {
+    font-size: clamp(11px, 3.5vw, 15px);
+    margin-bottom: 15px;
   }
   .count {
     gap: 4px;
@@ -1866,20 +1982,23 @@ button {
   .slide-guest .content {
     padding: 20px 16px;
   }
+  .slide-location .content {
+    padding: 20px 16px;
+  }
   .bismillah {
-    font-size: clamp(6px, 2vw, 9px);
+    font-size: clamp(3px, 1.5vw, 7px);
     line-height: 1.7;
   }
   .names {
-    font-size: 14px;
+    font-size: 12px;
   }
   .invite-text {
-    font-size: 10px;
+    font-size: 8px;
     line-height: 1.6;
     margin: 5px 0 8px;
   }
   .poem {
-    font-size: 12px;
+    font-size: 10px;
     line-height: 1.7;
   }
   .details {
@@ -1887,24 +2006,24 @@ button {
     gap: 3px;
   }
   .detail {
-    padding: 4px 2px;
+    padding: 3px 2px;
   }
   .detail b,
   .detail span {
-    font-size: 9px;
+    font-size: 7px;
   }
   .guest-name-display {
-    font-size: clamp(16px, 3.8vw, 24px);
+    font-size: clamp(14px, 3.2vw, 20px);
     margin: 8px 0;
     padding: 0;
   }
   .slide-guest .poem {
-    font-size: clamp(10px, 2.8vw, 14px);
+    font-size: clamp(8px, 2.2vw, 11px);
     margin: 5px 0;
     line-height: 2;
   }
   .slide-guest .orn {
-    font-size: 18px;
+    font-size: 15px;
     margin-bottom: 2px;
   }
   .slide-guest .line {
@@ -1915,14 +2034,27 @@ button {
     padding: 4px 12px;
     font-size: 10px;
   }
-  .map-wrap {
-    width: 150px;
-    height: 110px;
-    margin: 10px auto;
+  .location-map-wrap {
+    width: 160px;
+    height: 120px;
+    margin: 8px auto;
   }
-  .map-label {
-    font-size: 9px;
-    padding: 3px 8px;
+  .location-map-label {
+    font-size: 8px;
+    padding: 2px 6px;
+  }
+  .location-title {
+    font-size: clamp(13px, 4vw, 18px);
+    margin-bottom: 6px;
+  }
+  .location-address {
+    font-size: clamp(9px, 3vw, 12px);
+    margin-bottom: 10px;
+  }
+  .location-scroll-hint {
+    bottom: 20px;
+    padding: 4px 12px;
+    font-size: 10px;
   }
   .count {
     gap: 3px;
@@ -1937,14 +2069,6 @@ button {
   .t small {
     font-size: 7px;
     margin-top: 1px;
-  }
-  .s2-title {
-    font-size: 14px;
-    margin-bottom: 5px;
-  }
-  .address-text {
-    font-size: 11px;
-    margin-top: 4px;
   }
   .message-card {
     padding: 10px 10px;
