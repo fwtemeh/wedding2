@@ -339,8 +339,9 @@ button {
 /* ==================================================
    SLIDE 1
    از image.png (فایل PNG با پس‌زمینهٔ شفاف) استفاده می‌شود.
-   background-size: cover باعث می‌شود قاب گل بدون حاشیهٔ
-   خالی، کل صفحه را بپوشاند.
+   background-size: contain کل قاب گل را بدون بریدگی نشان
+   می‌دهد؛ چون رنگ داخل قاب و رنگ پس‌زمینهٔ صفحه هماهنگ‌اند،
+   فضای خالی احتمالی دور تصویر تقریباً نامرئی می‌شود.
 ================================================== */
 
 .slide-1 {
@@ -349,7 +350,7 @@ button {
   background-color: #f5f0f2;
   background-image: url("image.png");
   background-position: center center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
@@ -373,7 +374,7 @@ button {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: url("image.png") center / cover no-repeat;
+  background: url("image.png") center / contain no-repeat;
   opacity: 0.18;
 }
 
@@ -391,7 +392,7 @@ button {
   background-color: #f5f0f2;
   background-image: url("image.png");
   background-position: center center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
@@ -488,7 +489,7 @@ button {
   pointer-events: none;
   background:
     linear-gradient(rgba(46, 36, 40, 0.35), rgba(46, 36, 40, 0.5)),
-    url("image.png") center / cover no-repeat;
+    url("image.png") center / contain no-repeat;
 }
 
 /* ==================================================
@@ -1766,7 +1767,7 @@ button {
   pointer-events: none;
   background:
     linear-gradient(rgba(46, 36, 40, 0.45), rgba(46, 36, 40, 0.55)),
-    url("image.png") center / cover no-repeat;
+    url("image.png") center / contain no-repeat;
 }
 
 #expiredOverlay .expired-card {
