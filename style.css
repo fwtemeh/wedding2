@@ -68,30 +68,21 @@ button {
 #hero {
   position: absolute;
   inset: 0;
-
   width: 100%;
   height: 100%;
-
   object-fit: cover;
   object-position: center;
-
   display: block;
-
   background: var(--blush);
-
   touch-action: none;
 }
 
 .shade {
   position: absolute;
   inset: 0;
-
   z-index: 2;
-
   pointer-events: none;
-
-  background:
-    linear-gradient(to bottom,
+  background: linear-gradient(to bottom,
       rgba(46, 36, 40, 0.04),
       rgba(46, 36, 40, 0.12));
 }
@@ -103,16 +94,11 @@ button {
 .start {
   position: absolute;
   inset: 0;
-
   z-index: 20;
-
   display: flex;
   align-items: flex-end;
   justify-content: center;
-
-  padding:
-    0 max(16px, env(safe-area-inset-right)) max(7vh, calc(env(safe-area-inset-bottom) + 25px)) max(16px, env(safe-area-inset-left));
-
+  padding: 0 max(16px, env(safe-area-inset-right)) max(7vh, calc(env(safe-area-inset-bottom) + 25px)) max(16px, env(safe-area-inset-left));
   transition: opacity 0.6s ease;
 }
 
@@ -123,28 +109,15 @@ button {
 
 .start button {
   border: 1px solid rgba(168, 146, 154, 0.55);
-
   background: rgba(245, 240, 242, 0.94);
-
   color: var(--rose-deep);
-
   border-radius: 999px;
-
   padding: 12px 26px 13px;
-
   font-size: clamp(13px, 3.6vw, 15px);
-
-  box-shadow:
-    0 10px 28px rgba(46, 36, 40, 0.18);
-
+  box-shadow: 0 10px 28px rgba(46, 36, 40, 0.18);
   cursor: pointer;
-
   white-space: nowrap;
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   touch-action: manipulation;
 }
 
@@ -158,37 +131,24 @@ button {
 
 .mute-btn {
   position: absolute;
-
   top: max(16px, env(safe-area-inset-top));
   left: max(16px, env(safe-area-inset-left));
-
   z-index: 30;
-
   width: 44px;
   height: 44px;
-
   padding: 0;
-
   border: 0;
   border-radius: 50%;
-
   background: rgba(46, 36, 40, 0.25);
-
   color: #f5f0f2;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   opacity: 0;
-
   cursor: pointer;
-
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
   transition: opacity 0.5s ease;
-
   touch-action: manipulation;
 }
 
@@ -203,13 +163,9 @@ button {
 .mute-btn svg {
   width: 20px;
   height: 20px;
-
   fill: none;
-
   stroke: currentColor;
-
   stroke-width: 1.6;
-
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -220,37 +176,24 @@ button {
 
 .back-btn {
   position: absolute;
-
   top: max(16px, env(safe-area-inset-top));
   right: max(16px, env(safe-area-inset-right));
-
   z-index: 30;
-
   width: 44px;
   height: 44px;
-
   padding: 0;
-
   border: 0;
   border-radius: 50%;
-
   background: rgba(46, 36, 40, 0.25);
-
   color: #f5f0f2;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   opacity: 0;
-
   cursor: pointer;
-
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
   transition: opacity 0.5s ease;
-
   touch-action: manipulation;
 }
 
@@ -265,13 +208,9 @@ button {
 .back-btn svg {
   width: 20px;
   height: 20px;
-
   fill: none;
-
   stroke: currentColor;
-
   stroke-width: 1.6;
-
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -283,15 +222,10 @@ button {
 .glow {
   position: absolute;
   inset: 0;
-
   z-index: 4;
-
   pointer-events: none;
-
   opacity: 0;
-
-  background:
-    radial-gradient(circle at 50% 47%,
+  background: radial-gradient(circle at 50% 47%,
       rgba(255, 250, 248, 0.7),
       rgba(200, 180, 190, 0.25) 18%,
       transparent 52%);
@@ -306,11 +240,9 @@ button {
     opacity: 0;
     transform: scale(0.8);
   }
-
   25% {
     opacity: 1;
   }
-
   100% {
     opacity: 0;
     transform: scale(1.45);
@@ -323,36 +255,23 @@ button {
 
 .invite {
   position: absolute;
-
   z-index: 10;
-
   left: 8px;
   right: 8px;
-
   top: max(8px, env(safe-area-inset-top));
   bottom: max(8px, env(safe-area-inset-bottom));
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   opacity: 0;
-
-  transform:
-    translateY(42px) scale(0.96);
-
-  transition:
-    opacity 1s ease,
-    transform 1s ease;
-
+  transform: translateY(42px) scale(0.96);
+  transition: opacity 1s ease, transform 1s ease;
   pointer-events: none;
 }
 
 .invite.show {
   opacity: 1;
-
   transform: none;
-
   pointer-events: auto;
 }
 
@@ -362,41 +281,24 @@ button {
 
 .frame {
   position: relative;
-
   width: min(100%, 430px);
-
   height: min(92dvh, 760px);
-
-  max-height:
-    calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 16px);
-
+  max-height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 16px);
   overflow: hidden;
-
   border-radius: 16px;
-
-  border:
-    1px solid rgba(168, 146, 154, 0.65);
-
+  border: 1px solid rgba(168, 146, 154, 0.65);
   background: #f5f0f2;
-
-  box-shadow:
-    0 18px 55px rgba(46, 36, 40, 0.28),
+  box-shadow: 0 18px 55px rgba(46, 36, 40, 0.28),
     inset 0 0 0 5px rgba(245, 240, 242, 0.25);
 }
 
 .frame::before {
   content: "";
-
   position: absolute;
   inset: 8px;
-
   z-index: 5;
-
   pointer-events: none;
-
-  border:
-    1px solid rgba(168, 146, 154, 0.55);
-
+  border: 1px solid rgba(168, 146, 154, 0.55);
   border-radius: 12px;
 }
 
@@ -407,22 +309,15 @@ button {
 .slides {
   position: absolute;
   inset: 0;
-
   display: flex;
   flex-direction: column;
-
   width: 100%;
   height: 100%;
-
   overflow-x: hidden;
   overflow-y: auto;
-
   scroll-snap-type: y mandatory;
-
   -webkit-overflow-scrolling: touch;
-
   scrollbar-width: none;
-
   touch-action: pan-y;
 }
 
@@ -432,71 +327,53 @@ button {
 
 .slide {
   position: relative;
-
   flex: 0 0 100%;
-
   width: 100%;
   height: 100%;
   min-height: 100%;
-
   scroll-snap-align: start;
-
   scroll-snap-stop: always;
-
   background-color: #f5f0f2;
 }
 
 /* ==================================================
-   SLIDE 1
+   SLIDE 1 - با تصویر کوچکتر و بدون پس‌زمینه سفید
 ================================================== */
 
 .slide-1 {
   overflow: hidden;
-
   background-color: #f5f0f2;
-
   background-image: url("image.png");
-
   background-position: center center;
-
-  background-size: cover;
-
+  background-size: 75% auto; /* کوچکتر - 75% عرض */
   background-repeat: no-repeat;
+  background-blend-mode: multiply; /* حذف پس‌زمینه سفید */
 }
 
 /* ==================================================
-   SLIDE 2
+   SLIDE 2 - با تصویر کوچکتر
 ================================================== */
 
 .slide-2 {
   overflow-x: hidden;
   overflow-y: auto;
-
   -webkit-overflow-scrolling: touch;
-
   overscroll-behavior-y: auto;
-
   scrollbar-width: none;
-
   touch-action: pan-y;
-
   background: var(--blush);
 }
 
 .slide-2::before {
   content: "";
-
   position: absolute;
   inset: 0;
-
   z-index: 0;
-
   pointer-events: none;
-
   transform: scale(-1, -1);
-
-  background:
-    url("image.png") center / cover no-repeat;
+  background: url("image.png") center / 65% auto no-repeat; /* کوچکتر - 65% عرض */
+  opacity: 0.12; /* کمرنگ‌تر برای پس‌زمینه */
+  background-blend-mode: multiply;
 }
 
 .slide-2::-webkit-scrollbar {
@@ -504,7 +381,7 @@ button {
 }
 
 /* ==================================================
-   SLIDE GUEST - اسلاید نمایش نام مهمان
+   SLIDE GUEST - با تصویر کوچکتر و بدون پس‌زمینه سفید
 ================================================== */
 
 .slide-guest {
@@ -512,8 +389,9 @@ button {
   background-color: #f5f0f2;
   background-image: url("invitation.png");
   background-position: center center;
-  background-size: cover;
+  background-size: 80% auto; /* کوچکتر - 80% عرض */
   background-repeat: no-repeat;
+  background-blend-mode: multiply; /* حذف پس‌زمینه سفید */
 }
 
 .slide-guest .content {
@@ -528,8 +406,7 @@ button {
   font-weight: 700;
   font-size: clamp(28px, 8vw, 48px);
   color: #fff;
-  text-shadow:
-    0 2px 10px rgba(0, 0, 0, 0.5),
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5),
     0 4px 20px rgba(0, 0, 0, 0.3);
   text-align: center;
   padding: 20px 30px;
@@ -549,7 +426,6 @@ button {
     opacity: 0;
     transform: scale(0.9);
   }
-
   100% {
     opacity: 1;
     transform: scale(1);
@@ -583,19 +459,17 @@ button {
 }
 
 @keyframes bounceHint {
-
   0%,
   100% {
     transform: translateX(-50%) translateY(0);
   }
-
   50% {
     transform: translateX(-50%) translateY(-8px);
   }
 }
 
 /* ==================================================
-   SLIDE 3 - اسلاید پیام‌ها
+   SLIDE 3 - با تصویر کوچکتر
 ================================================== */
 
 .slide-3 {
@@ -603,7 +477,8 @@ button {
   background:
     linear-gradient(rgba(46, 36, 40, 0.35),
       rgba(46, 36, 40, 0.5)),
-    url("image.png") center / cover no-repeat;
+    url("image.png") center / 70% auto no-repeat; /* کوچکتر - 70% عرض */
+  background-blend-mode: multiply;
 }
 
 /* ==================================================
@@ -613,46 +488,32 @@ button {
 .content {
   position: absolute;
   inset: 0;
-
   width: 100%;
   height: 100%;
-
   z-index: 2;
-
   padding: 28px 22px 55px;
-
   display: flex;
   flex-direction: column;
-
   align-items: center;
   justify-content: center;
-
   text-align: center;
-
   color: var(--ink);
-
   overflow: hidden;
 }
 
 .slide-1 .content {
   justify-content: flex-start;
-
   padding-top: 56px;
 }
 
 .slide-2 .content {
   position: relative;
   inset: auto;
-
   width: 100%;
   height: auto;
-
   min-height: 100%;
-
   padding: 32px 20px 90px;
-
   justify-content: flex-start;
-
   overflow: visible;
 }
 
@@ -665,17 +526,11 @@ button {
 .slide-3 .content {
   position: relative;
   inset: auto;
-
   height: auto;
-
   min-height: 100%;
-
   justify-content: flex-start;
-
   padding: 30px 18px 72px;
-
   overflow: visible;
-
   align-items: flex-start;
   padding-right: 28px;
 }
@@ -718,83 +573,47 @@ button {
 ================================================== */
 
 .bismillah {
-  font-family:
-    "Noto Nastaliq Urdu",
-    "Aref Ruqaa",
-    "Noto Naskh Arabic",
-    "Amiri",
-    serif;
-
+  font-family: "Noto Nastaliq Urdu", "Aref Ruqaa", "Noto Naskh Arabic", "Amiri", serif;
   font-weight: 700;
-
-  font-size:
-    clamp(9px, 3.0vw, 15px);
-
+  font-size: clamp(9px, 3.0vw, 15px);
   color: var(--name);
-
   line-height: 2;
-
   margin-bottom: 6px;
-
   white-space: normal;
-
   max-width: 100%;
-
   text-align: center;
 }
 
 .names {
   font-family: "Amiri", serif;
-
   font-weight: 700;
-
-  font-size:
-    clamp(20px, 6.4vw, 29px);
-
+  font-size: clamp(20px, 6.4vw, 29px);
   color: var(--name);
-
   line-height: 1.5;
-
   width: 100%;
 }
 
 .invite-text {
-  font-size:
-    clamp(13px, 3.4vw, 17px);
-
+  font-size: clamp(13px, 3.4vw, 17px);
   line-height: 1.9;
-
   color: var(--ink-soft);
-
-  margin:
-    10px 0 14px;
-
+  margin: 10px 0 14px;
   max-width: 100%;
-
   white-space: normal;
-
   overflow: visible;
-
   text-align: center;
 }
 
 .poem {
-  font-size:
-    clamp(16px, 4.6vw, 21px);
-
+  font-size: clamp(16px, 4.6vw, 21px);
   line-height: 2.15;
-
   color: var(--rose-deep);
-
   margin: 0 0 8px;
 }
 
 .orn {
-  font-size:
-    clamp(20px, 5vw, 28px);
-
+  font-size: clamp(20px, 5vw, 28px);
   color: var(--gold);
-
   line-height: 1;
 }
 
@@ -805,15 +624,8 @@ button {
 .line {
   width: 65%;
   height: 1px;
-
   flex-shrink: 0;
-
-  background:
-    linear-gradient(90deg,
-      transparent,
-      var(--gold-soft),
-      transparent);
-
+  background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
   margin: 10px 0;
 }
 
@@ -823,54 +635,33 @@ button {
 
 .details {
   width: 100%;
-
   display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 5px;
-
   margin-top: 14px;
 }
 
 .detail {
   min-width: 0;
-
-  border:
-    1px solid rgba(168, 146, 154, 0.45);
-
+  border: 1px solid rgba(168, 146, 154, 0.45);
   border-radius: 8px;
-
-  background:
-    rgba(245, 240, 242, 0.78);
-
+  background: rgba(245, 240, 242, 0.78);
   padding: 7px 2px;
-
   overflow: hidden;
 }
 
 .detail b {
   display: block;
-
   color: var(--name);
-
-  font-size:
-    clamp(12px, 3.4vw, 17px);
-
+  font-size: clamp(12px, 3.4vw, 17px);
   margin-bottom: 2px;
-
   white-space: nowrap;
 }
 
 .detail span {
   display: block;
-
   color: var(--ink-soft);
-
-  font-size:
-    clamp(12px, 3.4vw, 17px);
-
+  font-size: clamp(12px, 3.4vw, 17px);
   white-space: nowrap;
 }
 
@@ -882,22 +673,15 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-
   font-size: 0.72rem;
   color: var(--rose-deep);
-
   margin: 10px 0 8px;
-
   letter-spacing: 0.3px;
-
   align-self: flex-start;
-
   background: rgba(245, 240, 242, 0.85);
   border: 1px solid rgba(168, 146, 154, 0.4);
   border-radius: 999px;
-
   padding: 5px 14px;
-
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
@@ -917,76 +701,49 @@ button {
 ================================================== */
 
 .count-title {
-  font-size:
-    clamp(17px, 4.8vw, 22px);
-
+  font-size: clamp(17px, 4.8vw, 22px);
   color: var(--ink-soft);
-
   line-height: 1.8;
 }
 
 .count {
   display: flex;
-
   direction: ltr;
-
   justify-content: center;
   align-items: center;
-
-  gap:
-    clamp(3px, 2vw, 8px);
-
+  gap: clamp(3px, 2vw, 8px);
   margin-top: 12px;
 }
 
 .t {
   text-align: center;
-
-  min-width:
-    clamp(34px, 11vw, 42px);
+  min-width: clamp(34px, 11vw, 42px);
 }
 
 .t strong {
   display: block;
-
-  font-size:
-    clamp(18px, 5.5vw, 26px);
-
+  font-size: clamp(18px, 5.5vw, 26px);
   font-weight: 700;
-
   color: var(--gold-strong);
-
   line-height: 1.25;
 }
 
 .t small {
   display: block;
-
-  font-size:
-    clamp(9px, 2.8vw, 12px);
-
+  font-size: clamp(9px, 2.8vw, 12px);
   color: var(--ink-soft);
-
   margin-top: 3px;
 }
 
 .countdown-done {
   margin-top: 14px;
-
   font-size: clamp(16px, 4.5vw, 20px);
-
   font-weight: 700;
-
   color: var(--rose-deep);
-
   background: rgba(245, 240, 242, 0.85);
-
   border: 1px solid rgba(168, 146, 154, 0.4);
-
   border-radius: 999px;
-
   padding: 8px 22px;
-
   display: inline-block;
 }
 
@@ -999,97 +756,63 @@ button {
 ================================================== */
 
 .s2-title {
-  font-size:
-    clamp(18px, 5vw, 23px);
-
+  font-size: clamp(18px, 5vw, 23px);
   color: var(--rose-deep);
-
   margin-bottom: 10px;
 }
 
 .map-wrap {
   position: relative;
-
-  width: 200px;                 /* عرض دقیق */
-  height: 150px;                /* ارتفاع دقیق (مستطیل) */
-  max-width: 100%;              /* جلوگیری از بیرون زدن در موبایل‌های خیلی کوچک */
-  margin: 20px auto;            /* وسط چین */
-
+  width: 200px;
+  height: 150px;
+  max-width: 100%;
+  margin: 20px auto;
   flex: none;
-
   overflow: hidden;
-
   border-radius: 12px;
-
   border: 1px solid rgba(168, 146, 154, 0.45);
-
   cursor: pointer;
-
   background: #d9cfd4;
-
   touch-action: manipulation;
 }
 
 .map-wrap iframe {
   position: absolute;
   inset: 0;
-
   width: 100%;
   height: 100%;
-
   border: 0;
-
   pointer-events: none;
 }
 
 .map-tint {
   position: absolute;
   inset: 0;
-
   pointer-events: none;
-
-  background:
-    linear-gradient(to bottom,
+  background: linear-gradient(to bottom,
       rgba(46, 36, 40, 0.15),
       rgba(74, 53, 64, 0.28));
 }
 
 .map-label {
   position: absolute;
-
   left: 50%;
   bottom: 7px;
-
   transform: translateX(-50%);
-
   max-width: 90%;
-
   white-space: nowrap;
-
-  background:
-    rgba(245, 240, 242, 0.94);
-
+  background: rgba(245, 240, 242, 0.94);
   color: var(--rose-deep);
-
-  border:
-    1px solid rgba(168, 146, 154, 0.45);
-
+  border: 1px solid rgba(168, 146, 154, 0.45);
   border-radius: 999px;
-
   padding: 4px 9px;
-
-  font-size:
-    clamp(11px, 3.3vw, 15px);
+  font-size: clamp(11px, 3.3vw, 15px);
 }
 
 .address-text {
-  font-size:
-    clamp(13px, 3.8vw, 18px);
-
+  font-size: clamp(13px, 3.8vw, 18px);
   color: var(--ink-soft);
-
   line-height: 1.8;
-
   margin-top: 7px;
 }
 
@@ -1099,32 +822,23 @@ button {
 
 .qr-row {
   display: flex;
-
   justify-content: center;
-
   margin-top: 10px;
-
   padding-bottom: 15px;
 }
 
 .qr-box {
   width: 64px;
   height: 64px;
-
   padding: 4px;
-
   border-radius: 9px;
-
   background: white;
-
-  border:
-    1px solid rgba(168, 146, 154, 0.45);
+  border: 1px solid rgba(168, 146, 154, 0.45);
 }
 
 .qr-box img {
   width: 100%;
   height: 100%;
-
   display: block;
 }
 
@@ -1134,42 +848,27 @@ button {
 
 .dots {
   position: absolute;
-
   top: 50%;
   right: 12px;
-
   transform: translateY(-50%);
-
   z-index: 10;
-
   display: flex;
-
   flex-direction: column;
-
   gap: 7px;
 }
 
 .dot {
   width: 10px;
   height: 10px;
-
   border-radius: 50%;
-
-  background:
-    rgba(168, 146, 154, 0.35);
-
+  background: rgba(168, 146, 154, 0.35);
   cursor: pointer;
-
-  transition:
-    background 0.25s ease,
-    transform 0.25s ease;
-
+  transition: background 0.25s ease, transform 0.25s ease;
   touch-action: manipulation;
 }
 
 .dot.active {
   background: var(--gold);
-
   transform: scale(1.35);
 }
 
@@ -1180,93 +879,58 @@ button {
 .map-modal {
   position: fixed;
   inset: 0;
-
   z-index: 100;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   padding: 24px;
-
-  background:
-    rgba(46, 36, 40, 0.55);
-
+  background: rgba(46, 36, 40, 0.55);
   opacity: 0;
-
   pointer-events: none;
-
   transition: opacity 0.25s ease;
 }
 
 .map-modal.show {
   opacity: 1;
-
   pointer-events: auto;
 }
 
 .map-modal .box {
   width: 100%;
   max-width: 300px;
-
   background: var(--cream);
-
-  border:
-    1px solid rgba(168, 146, 154, 0.6);
-
+  border: 1px solid rgba(168, 146, 154, 0.6);
   border-radius: 16px;
-
   padding: 22px 18px;
-
   text-align: center;
 }
 
 .map-modal p {
   margin: 0 0 15px;
-
   font-size: 15px;
-
   color: var(--ink);
 }
 
 .map-modal .opt {
   display: block;
-
   width: 100%;
-
   padding: 11px;
-
   margin-bottom: 9px;
-
   border-radius: 999px;
-
-  border:
-    1px solid rgba(168, 146, 154, 0.5);
-
-  background:
-    rgba(245, 240, 242, 0.92);
-
+  border: 1px solid rgba(168, 146, 154, 0.5);
+  background: rgba(245, 240, 242, 0.92);
   color: var(--rose-deep);
-
   font-size: 15px;
-
   cursor: pointer;
-
   touch-action: manipulation;
 }
 
 .map-modal .cancel {
   border: 0;
-
   background: none;
-
   color: var(--ink-soft);
-
   font-size: 13px;
-
   cursor: pointer;
-
   touch-action: manipulation;
 }
 
@@ -1312,39 +976,25 @@ button {
 .message-card {
   width: 100%;
   max-width: 360px;
-
   padding: 18px 14px;
-
-  border:
-    1px solid rgba(245, 240, 242, 0.55);
-
+  border: 1px solid rgba(245, 240, 242, 0.55);
   border-radius: 16px;
-
-  background:
-    rgba(245, 240, 242, 0.88);
-
+  background: rgba(245, 240, 242, 0.88);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-
-  box-shadow:
-    0 12px 32px rgba(46, 36, 40, 0.22);
-
+  box-shadow: 0 12px 32px rgba(46, 36, 40, 0.22);
   align-self: flex-start;
 }
 
 .message-card h2 {
   margin: 0 0 5px;
-
   color: var(--rose-deep);
-
   font-size: 23px;
 }
 
 .message-card p {
   margin: 0 0 14px;
-
   color: var(--ink-soft);
-
   font-size: 14px;
 }
 
@@ -1355,33 +1005,16 @@ button {
 .message-input,
 .message-name {
   width: 100%;
-
-  border:
-    1px solid rgba(168, 146, 154, 0.55);
-
+  border: 1px solid rgba(168, 146, 154, 0.55);
   border-radius: 10px;
-
   background: #fffafc;
-
   padding: 10px 12px;
-
   margin: 6px 0;
-
-  font-family:
-    "B Nazanin",
-    "BNazanin",
-    "Vazir",
-    "Amiri",
-    serif;
-
+  font-family: "B Nazanin", "BNazanin", "Vazir", "Amiri", serif;
   font-size: 16px;
-
   color: var(--ink);
-
   outline: none;
-
   resize: vertical;
-
   touch-action: manipulation;
 }
 
@@ -1402,23 +1035,15 @@ button {
 .guest-message,
 .guest-message .msg-name,
 .guest-message .msg-text {
-  font-family:
-    "B Nazanin",
-    "BNazanin",
-    "Vazir",
-    "Amiri",
-    serif;
+  font-family: "B Nazanin", "BNazanin", "Vazir", "Amiri", serif;
 }
 
 .guest-message .msg-name {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-
   color: var(--name);
-
   font-size: 15px;
-
   font-weight: 700;
 }
 
@@ -1429,15 +1054,10 @@ button {
 
 .guest-message .msg-text {
   font-size: 15px;
-
   color: var(--ink-soft);
-
   line-height: 1.7;
-
   white-space: pre-wrap;
-
   overflow-wrap: anywhere;
-
   margin-top: 2px;
 }
 
@@ -1447,30 +1067,17 @@ button {
 
 .messages-list {
   width: 100%;
-
   max-width: 360px;
-
   margin-top: 4px;
-
   display: flex;
   flex-direction: column;
-
-  background:
-    rgba(245, 240, 242, 0.88);
-
+  background: rgba(245, 240, 242, 0.88);
   border-radius: 16px;
-
   padding: 4px 14px;
-
-  border:
-    1px solid rgba(168, 146, 154, 0.35);
-
-  box-shadow:
-    0 10px 28px rgba(46, 36, 40, 0.16);
-
+  border: 1px solid rgba(168, 146, 154, 0.35);
+  box-shadow: 0 10px 28px rgba(46, 36, 40, 0.16);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-
   align-self: flex-start;
 }
 
@@ -1478,12 +1085,8 @@ button {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-
   padding: 12px 0;
-
-  border-bottom:
-    1px dashed rgba(168, 146, 154, 0.4);
-
+  border-bottom: 1px dashed rgba(168, 146, 154, 0.4);
   text-align: right;
 }
 
@@ -1498,23 +1101,16 @@ button {
 
 .guest-message .avatar {
   flex: 0 0 34px;
-
   width: 34px;
   height: 34px;
-
   border-radius: 50%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: #fff;
-
   font-size: 13px;
   font-weight: 700;
-
-  box-shadow:
-    0 2px 6px rgba(46, 36, 40, 0.25);
+  box-shadow: 0 2px 6px rgba(46, 36, 40, 0.25);
 }
 
 .guest-message .msg-body {
@@ -1531,15 +1127,10 @@ button {
 
 .guest-message .msg-time {
   flex-shrink: 0;
-
   font-size: 10.5px;
-
   color: var(--ink-soft);
-
   opacity: 0.75;
-
   direction: ltr;
-
   white-space: nowrap;
 }
 
@@ -1594,24 +1185,14 @@ button {
 
 .admin-pass {
   width: 100%;
-
-  border:
-    1px solid rgba(168, 146, 154, 0.55);
-
+  border: 1px solid rgba(168, 146, 154, 0.55);
   border-radius: 10px;
-
   background: #fffafc;
-
   padding: 10px 12px;
-
   margin: 6px 0;
-
   font: inherit;
-
   color: var(--ink);
-
   outline: none;
-
   touch-action: manipulation;
 }
 
@@ -1622,27 +1203,15 @@ button {
 .message-btn,
 .admin-btn {
   width: 100%;
-
   border: 0;
-
   border-radius: 999px;
-
   padding: 10px 15px;
-
   margin-top: 7px;
-
   font-size: 15px;
-
   cursor: pointer;
-
   background: var(--rose);
-
   color: var(--cream);
-
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease;
-
+  transition: transform 0.2s ease, opacity 0.2s ease;
   touch-action: manipulation;
 }
 
@@ -1654,16 +1223,13 @@ button {
 .message-btn {
   background: rgba(245, 240, 242, 0.9);
   color: var(--rose-deep);
-
   border: 1.5px dashed rgba(168, 146, 154, 0.7);
-
   font-weight: 700;
 }
 
 .message-btn:disabled,
 .admin-btn:disabled {
   opacity: 0.6;
-
   cursor: not-allowed;
 }
 
@@ -1673,15 +1239,10 @@ button {
 
 .signature {
   margin-top: 16px;
-
   font-size: 11px;
-
   letter-spacing: 0.3px;
-
   color: rgba(245, 240, 242, 0.85);
-
   text-align: center;
-
   align-self: flex-start;
   width: 100%;
 }
@@ -1703,87 +1264,49 @@ button {
 
 .toast-wrap {
   position: fixed;
-
   left: 50%;
-
-  bottom:
-    max(24px, calc(env(safe-area-inset-bottom) + 18px));
-
-  transform:
-    translateX(-50%) translateY(18px);
-
+  bottom: max(24px, calc(env(safe-area-inset-bottom) + 18px));
+  transform: translateX(-50%) translateY(18px);
   z-index: 300;
-
   width: min(92%, 360px);
-
   display: flex;
-
   justify-content: center;
-
   pointer-events: none;
 }
 
 .toast {
   display: flex;
-
   align-items: center;
-
   gap: 10px;
-
   width: 100%;
-
   padding: 13px 16px;
-
   border-radius: 14px;
-
-  border:
-    1px solid rgba(168, 146, 154, 0.5);
-
-  background:
-    rgba(245, 240, 242, 0.97);
-
+  border: 1px solid rgba(168, 146, 154, 0.5);
+  background: rgba(245, 240, 242, 0.97);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
-  box-shadow:
-    0 14px 34px rgba(46, 36, 40, 0.28);
-
+  box-shadow: 0 14px 34px rgba(46, 36, 40, 0.28);
   opacity: 0;
-
-  transform:
-    translateY(10px) scale(0.97);
-
-  transition:
-    opacity 0.35s ease,
-    transform 0.35s ease;
-
+  transform: translateY(10px) scale(0.97);
+  transition: opacity 0.35s ease, transform 0.35s ease;
   pointer-events: auto;
 }
 
 .toast.show {
   opacity: 1;
-
-  transform:
-    translateY(0) scale(1);
+  transform: translateY(0) scale(1);
 }
 
 .toast .toast-icon {
   flex-shrink: 0;
-
   width: 26px;
   height: 26px;
-
   border-radius: 50%;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   font-size: 14px;
-
   color: var(--cream);
-
   background: var(--rose);
 }
 
@@ -1793,16 +1316,10 @@ button {
 
 .toast .toast-text {
   flex: 1;
-
   min-width: 0;
-
-  font-size:
-    clamp(13px, 3.6vw, 15px);
-
+  font-size: clamp(13px, 3.6vw, 15px);
   line-height: 1.6;
-
   color: var(--rose-deep);
-
   text-align: right;
 }
 
@@ -1812,49 +1329,26 @@ button {
 
 .admin-gear {
   position: fixed;
-
-  bottom:
-    max(18px, env(safe-area-inset-bottom));
-
-  right:
-    max(18px, env(safe-area-inset-right));
-
+  bottom: max(18px, env(safe-area-inset-bottom));
+  right: max(18px, env(safe-area-inset-right));
   z-index: 50;
-
   width: 48px;
   height: 48px;
-
   padding: 0;
-
-  border:
-    1px solid rgba(245, 240, 242, 0.55);
-
+  border: 1px solid rgba(245, 240, 242, 0.55);
   border-radius: 50%;
-
-  background:
-    rgba(46, 36, 40, 0.42);
-
+  background: rgba(46, 36, 40, 0.42);
   color: var(--cream);
-
   font-family: sans-serif;
-
   font-size: 22px;
-
   line-height: 1;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   cursor: pointer;
-
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
-  box-shadow:
-    0 5px 18px rgba(46, 36, 40, 0.25);
-
+  box-shadow: 0 5px 18px rgba(46, 36, 40, 0.25);
   touch-action: manipulation;
 }
 
@@ -1868,20 +1362,13 @@ button {
 
 .admin-panel {
   position: fixed;
-
   inset: 0;
-
   z-index: 200;
-
   display: none;
-
   align-items: center;
   justify-content: center;
-
   padding: 20px;
-
-  background:
-    rgba(46, 36, 40, 0.62);
+  background: rgba(46, 36, 40, 0.62);
 }
 
 .admin-panel.show {
@@ -1890,84 +1377,54 @@ button {
 
 .admin-box {
   width: min(100%, 360px);
-
   max-height: 85dvh;
-
   overflow: auto;
-
   background: var(--cream);
-
   border-radius: 16px;
-
   padding: 20px;
-
-  border:
-    1px solid rgba(168, 146, 154, 0.6);
-
+  border: 1px solid rgba(168, 146, 154, 0.6);
   text-align: center;
 }
 
 .admin-box h3 {
   margin-top: 0;
-
   color: var(--rose-deep);
 }
 
 .admin-row {
   display: flex;
-
   align-items: center;
   justify-content: space-between;
-
   gap: 8px;
-
   padding: 9px 0;
-
-  border-bottom:
-    1px solid rgba(168, 146, 154, 0.25);
-
+  border-bottom: 1px solid rgba(168, 146, 154, 0.25);
   text-align: right;
 }
 
 .admin-row button {
   flex-shrink: 0;
-
   border: 0;
-
   border-radius: 7px;
-
   padding: 5px 8px;
-
   cursor: pointer;
-
   font-family: inherit;
-
   background: var(--rose);
-
   color: white;
-
   touch-action: manipulation;
 }
 
 .admin-row small {
   color: var(--ink-soft);
-
   line-height: 1.7;
 }
 
 .admin-open {
   margin-top: 13px;
-
   border: 0;
-
   background: transparent;
-
   color: var(--rose-deep);
-
   font: inherit;
-
   cursor: pointer;
-
   text-decoration: underline;
 }
 
@@ -2155,48 +1612,38 @@ button {
 ================================================== */
 
 @media (max-width: 360px) {
-
   .content {
     padding-left: 16px;
     padding-right: 16px;
   }
-
   .bismillah {
     font-size: clamp(8px, 2.5vw, 12px);
   }
-
   .names {
     font-size: clamp(13px, 4.2vw, 17px);
   }
-
   .invite-text {
     font-size: 14.5px;
   }
-
   .poem {
     font-size: 13.5px;
   }
-
   .detail b,
   .detail span {
     font-size: 11px;
   }
-
   .slide-2 .content {
     padding-left: 16px;
     padding-right: 16px;
   }
-
   .slide-3 .content {
     padding-right: 16px;
     padding-left: 16px;
   }
-
   .guest-name-display {
     font-size: clamp(22px, 6vw, 32px);
     padding: 15px 20px;
   }
-
   .invitation-guest-name {
     font-size: clamp(16px, 4vw, 22px);
   }
@@ -2207,59 +1654,43 @@ button {
 ================================================== */
 
 @media (max-height: 700px) {
-
   .frame {
     height: 94dvh;
   }
-
   .content {
     padding-top: 20px;
     padding-bottom: 48px;
   }
-
   .slide-1 .content {
     padding-top: 46px;
   }
-
   .bismillah {
     font-size: clamp(8px, 2.5vw, 11px);
-
     line-height: 1.9;
-
     margin-bottom: 4px;
   }
-
   .names {
     font-size: 20px;
   }
-
   .invite-text {
     font-size: 13px;
-
     line-height: 1.7;
-
     margin: 5px 0 8px;
   }
-
   .poem {
     font-size: 16px;
-
     line-height: 1.9;
   }
-
   .details {
     margin-top: 8px;
   }
-
   .slide-2 .content {
     padding-top: 28px;
   }
-
   .guest-name-display {
     font-size: clamp(24px, 5vw, 36px);
     padding: 12px 18px;
   }
-
   .invitation-guest-name {
     font-size: clamp(16px, 3.5vw, 24px);
   }
@@ -2270,47 +1701,37 @@ button {
 ================================================== */
 
 @media (max-height: 600px) {
-
   .frame {
     height: 96dvh;
   }
-
   .slide-1 .content {
     padding-top: 25px;
   }
-
   .bismillah {
     font-size: clamp(7px, 2.2vw, 10px);
     line-height: 1.7;
   }
-
   .names {
     font-size: 18px;
   }
-
   .poem {
     font-size: 14px;
     line-height: 1.7;
   }
-
   .details {
     margin-top: 5px;
   }
-
   .detail {
     padding: 5px 2px;
   }
-
   .guest-name-display {
     font-size: clamp(18px, 4vw, 26px);
     padding: 10px 14px;
   }
-
   .invitation-guest-name {
     font-size: clamp(14px, 3vw, 20px);
   }
 }
-
 
 /* ==================================================
    EXPIRED / INVALID INVITATION
@@ -2324,9 +1745,9 @@ button {
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background:
-    linear-gradient(rgba(46, 36, 40, 0.45), rgba(46, 36, 40, 0.55)),
-    url("invitation.png") center / cover no-repeat;
+  background: linear-gradient(rgba(46, 36, 40, 0.45), rgba(46, 36, 40, 0.55)),
+    url("invitation.png") center / 70% auto no-repeat;
+  background-blend-mode: multiply;
 }
 
 #expiredOverlay .expired-card {
